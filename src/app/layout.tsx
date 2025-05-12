@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Roboto_Mono as RobotoMono } from 'next/font/google'; // Use Roboto Mono Google Font
+import { Roboto_Mono } from 'next/font/google'; // Corrected Google Font import
 import './globals.css';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
@@ -8,7 +8,7 @@ import { cn } from '@/lib/utils';
 import { ThemeProvider } from '@/components/layout/ThemeProvider'; // Import ThemeProvider
 
 // Configure Roboto Mono font
-const robotoMono = RobotoMono({
+const robotoMono = Roboto_Mono({ // Use the imported font object directly
   variable: '--font-roboto-mono',
   subsets: ['latin'],
   display: 'swap', // Ensure font displays immediately with fallback

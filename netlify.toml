@@ -1,0 +1,17 @@
+# Example netlify.toml for a Next.js App Router project
+[build]
+  command = "next build"
+  publish = ".next" # Standard output directory for Next.js
+
+# Optional: Redirects and rewrites for Next.js routing if needed
+# [[redirects]]
+#   from = "/*"
+#   to = "/index.html"
+#   status = 200
+# Add more specific rules if your app uses dynamic routes extensively
+# Consult Netlify and Next.js documentation for advanced routing configurations.
+
+[plugins]
+  # Essential plugin for Next.js on Netlify
+  [[plugins.package]]
+    package = "@netlify/plugin-nextjs"
