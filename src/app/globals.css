@@ -2,8 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Set the default font family using the CSS variable */
 body {
-  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  font-family: var(--font-roboto-mono), monospace; /* Use the Roboto Mono variable and fallback to monospace */
 }
 
 @layer base {
@@ -110,5 +111,6 @@ body {
   }
   body {
     @apply bg-background text-foreground;
+    /* Ensure the font-mono utility class is applied in layout.tsx if needed elsewhere */
   }
 }

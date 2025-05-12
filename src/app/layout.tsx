@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Geist_Sans as GeistSans } from 'next/font/google'; // Use Geist Sans
+import { Roboto_Mono as RobotoMono } from 'next/font/google'; // Use Roboto Mono Google Font
 import './globals.css';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
@@ -7,9 +7,11 @@ import { Toaster } from "@/components/ui/toaster";
 import { cn } from '@/lib/utils';
 import { ThemeProvider } from '@/components/layout/ThemeProvider'; // Import ThemeProvider
 
-const geistSans = GeistSans({
-  variable: '--font-geist-sans',
+// Configure Roboto Mono font
+const robotoMono = RobotoMono({
+  variable: '--font-roboto-mono',
   subsets: ['latin'],
+  display: 'swap', // Ensure font displays immediately with fallback
 });
 
 export const metadata: Metadata = {
@@ -24,7 +26,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="h-full" suppressHydrationWarning> {/* suppressHydrationWarning for next-themes */}
-      <body className={cn(geistSans.variable, "h-full antialiased flex flex-col")}>
+      {/* Apply the font variable to the body */}
+      <body className={cn(robotoMono.variable, "font-mono h-full antialiased flex flex-col")}> {/* Use font-mono utility class */}
         <ThemeProvider
             attribute="class"
             defaultTheme="system"
