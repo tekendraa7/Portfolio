@@ -25,7 +25,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="h-full" suppressHydrationWarning> {/* suppressHydrationWarning for next-themes */}
+    <html lang="en" className="h-full" suppressHydrationWarning>{/* suppressHydrationWarning for next-themes */}
       {/* Apply the font variable to the body */}
       <body className={cn(robotoMono.variable, "font-mono h-full antialiased flex flex-col")}> {/* Use font-mono utility class */}
         <ThemeProvider
