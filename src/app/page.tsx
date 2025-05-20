@@ -88,7 +88,7 @@ export default function Home() {
       <section className="container mx-auto px-4">
          <div className="relative w-full h-64 md:h-96 rounded-lg overflow-hidden shadow-xl">
             <Image
-              src="https://picsum.photos/1200/400"
+              src="https://placehold.co/1200x400.png"
               alt="Cybersecurity conceptual image"
               layout="fill"
               objectFit="cover"
