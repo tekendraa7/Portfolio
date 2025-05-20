@@ -28,7 +28,7 @@ export const aboutData = {
   title: "Computer Engineering Student",
   university: "Far Western University",
   bio: "I am a passionate computer engineering student with a strong interest in cybersecurity, Linux systems, and networking. I am dedicated to continuous learning and applying my knowledge to solve real-world problems. This portfolio showcases my journey, projects, and the resources I find valuable.",
-  profileImageUrl: "https://picsum.photos/300/300",
+  profileImageUrl: "https://avatars.githubusercontent.com/u/182990458?v=4",
   profileImageHint: "profile picture",
   skills: [
     { name: "Linux Administration", level: 85 },
@@ -231,7 +231,7 @@ export const freeCourseSuggestions: Course[] = [
     url: "https://www.netacad.com/courses/os-it/ndg-linux-essentials",
     category: "Linux",
     isFree: true,
-    imageUrl: "https://picsum.photos/300/200",
+    imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuYg6bzmuG8uh1FshnVeC5DkB9HvuTdZsIrQ&s",
     imageHint: "linux penguin",
   },
 ];
