@@ -1,3 +1,4 @@
+
 import type { LucideIcon } from "lucide-react";
 import { BookMarked, Newspaper, GraduationCap, ExternalLink } from "lucide-react";
 
@@ -121,7 +122,7 @@ export const freeCourseSuggestions: Course[] = [
     category: "Cybersecurity",
     isFree: true,
     imageUrl: "https://placehold.co/300x200.png",
-    imageHint: "cisco logo",
+    imageHint: "cybersecurity course", // Updated from "cisco logo"
   },
   {
     id: "2",
@@ -153,7 +154,7 @@ export const freeCourseSuggestions: Course[] = [
     url: "https://www.netacad.com/courses/os-it/ndg-linux-essentials",
     category: "Linux",
     isFree: true,
-    imageUrl: "https://placehold.co/300x200.png", // Replaced picsum with placeholder
-    imageHint: "linux penguin",
+    imageUrl: "https://placehold.co/300x200.png",
+    imageHint: "linux course", // Updated from "linux penguin"
   },
 ];
