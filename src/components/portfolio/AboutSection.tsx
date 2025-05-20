@@ -11,19 +11,25 @@ interface AboutSectionProps {
 export function AboutSection({ data }: AboutSectionProps) {
   return (
     <Card className="overflow-hidden shadow-lg">
-      <div className="md:flex">
-        <div className="md:w-1/3 relative min-h-[300px] md:min-h-full">
+      {/* Removed md:flex, children will stack vertically */}
+      <div>
+        {/* Image container - takes full width */}
+        <div className="w-full relative">
           {data.profileImageUrl && (
             <Image
               src={data.profileImageUrl}
               alt={data.name}
-              layout="fill"
-              objectFit="cover"
+              layout="responsive" // Changed from "fill"
+              width={500}         // Aspect ratio: width
+              height={500}        // Aspect ratio: height (square for profile pic)
+              objectFit="cover"   // Keeps behavior of covering the area, cropping if needed
               data-ai-hint={data.profileImageHint}
+              className="rounded-t-lg" // Apply rounding to top corners of the image
             />
           )}
         </div>
-        <div className="md:w-2/3 p-6 md:p-8">
+        {/* Text content container - takes full width, appears below image */}
+        <div className="w-full p-6 md:p-8">
           <CardHeader className="p-0 mb-4">
             <CardTitle className="text-3xl font-bold text-primary">{data.name}</CardTitle>
             <p className="text-lg text-accent">{data.title}</p>
