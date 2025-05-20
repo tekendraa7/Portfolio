@@ -41,7 +41,7 @@ export const recommendedBooks: Book[] = [
     author: "Doug Lowe",
     description: "A comprehensive guide covering everything from basic network setup to virtualizaton and cloud computing.",
     imageUrl: "https://placehold.co/200x300.png",
-    imageHint: "networking book", // Updated
+    imageHint: "networking book",
     amazonLink: "#",
   },
   {
@@ -50,7 +50,7 @@ export const recommendedBooks: Book[] = [
     author: "Joseph Steinberg",
     description: "Learn how to protect your personal and business information from cyber threats.",
     imageUrl: "https://placehold.co/200x300.png",
-    imageHint: "cybersecurity book", // Updated
+    imageHint: "cybersecurity book",
     amazonLink: "#",
   },
   {
@@ -59,7 +59,7 @@ export const recommendedBooks: Book[] = [
     author: "William Shotts",
     description: "Master the Linux command line with this in-depth guide, perfect for beginners and experienced users alike.",
     imageUrl: "https://placehold.co/200x300.png",
-    imageHint: "linux book", // Updated
+    imageHint: "linux book",
     amazonLink: "#",
   },
   {
@@ -68,7 +68,7 @@ export const recommendedBooks: Book[] = [
     author: "Jon Erickson",
     description: "A classic book that delves into the technical details of hacking and exploit development.",
     imageUrl: "https://placehold.co/200x300.png",
-    imageHint: "hacking book", // Updated
+    imageHint: "hacking book",
     amazonLink: "#",
   },
 ];
@@ -154,7 +154,8 @@ export const freeCourseSuggestions: Course[] = [
     url: "https://www.netacad.com/courses/os-it/ndg-linux-essentials",
     category: "Linux",
     isFree: true,
-    imageUrl: "https://placehold.co/300x200.png",
+    imageUrl: "https://placehold.co/300x200.png", // Changed from specific gstatic to placeholder
     imageHint: "linux course",
   },
 ];
+
