@@ -41,7 +41,7 @@ export const recommendedBooks: Book[] = [
     author: "Doug Lowe",
     description: "A comprehensive guide covering everything from basic network setup to virtualizaton and cloud computing.",
     imageUrl: "https://placehold.co/200x300.png",
-    imageHint: "book cover",
+    imageHint: "networking book", // Updated
     amazonLink: "#",
   },
   {
@@ -50,7 +50,7 @@ export const recommendedBooks: Book[] = [
     author: "Joseph Steinberg",
     description: "Learn how to protect your personal and business information from cyber threats.",
     imageUrl: "https://placehold.co/200x300.png",
-    imageHint: "book cover",
+    imageHint: "cybersecurity book", // Updated
     amazonLink: "#",
   },
   {
@@ -59,7 +59,7 @@ export const recommendedBooks: Book[] = [
     author: "William Shotts",
     description: "Master the Linux command line with this in-depth guide, perfect for beginners and experienced users alike.",
     imageUrl: "https://placehold.co/200x300.png",
-    imageHint: "book cover",
+    imageHint: "linux book", // Updated
     amazonLink: "#",
   },
   {
@@ -68,7 +68,7 @@ export const recommendedBooks: Book[] = [
     author: "Jon Erickson",
     description: "A classic book that delves into the technical details of hacking and exploit development.",
     imageUrl: "https://placehold.co/200x300.png",
-    imageHint: "book cover",
+    imageHint: "hacking book", // Updated
     amazonLink: "#",
   },
 ];
@@ -122,7 +122,7 @@ export const freeCourseSuggestions: Course[] = [
     category: "Cybersecurity",
     isFree: true,
     imageUrl: "https://placehold.co/300x200.png",
-    imageHint: "cybersecurity course", // Updated from "cisco logo"
+    imageHint: "cybersecurity course",
   },
   {
     id: "2",
@@ -155,6 +155,6 @@ export const freeCourseSuggestions: Course[] = [
     category: "Linux",
     isFree: true,
     imageUrl: "https://placehold.co/300x200.png",
-    imageHint: "linux course", // Updated from "linux penguin"
+    imageHint: "linux course",
   },
 ];
