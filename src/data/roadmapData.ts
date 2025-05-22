@@ -1,5 +1,4 @@
 
-'use server';
 /**
  * @fileOverview Data for the Cybersecurity, Linux, and Networking Roadmap.
  */
