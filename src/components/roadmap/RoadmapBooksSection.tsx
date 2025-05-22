@@ -1,14 +1,19 @@
 
-import type { RoadmapBook } from "@/data/roadmapData";
+import type { RoadmapBook } from "@/data/roadmapData"; // Using old data type, will be unused
 import { ResourceCard } from "@/components/resources/ResourceCard";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { BookOpen } from "lucide-react";
 
-interface RoadmapBooksSectionProps {
-  books: RoadmapBook[];
+// This component is no longer directly used by the new roadmap page (src/app/roadmap/page.tsx)
+// as it now uses RoadmapBookCard.tsx within a tabbed layout.
+// Keeping the file for now in case it's referenced elsewhere or for future use.
+// If confirmed unused, it can be deleted.
+
+interface OldRoadmapBooksSectionProps {
+  books: RoadmapBook[]; // This uses the OLD RoadmapBook type
 }
 
-export function RoadmapBooksSection({ books }: RoadmapBooksSectionProps) {
+export function RoadmapBooksSection({ books }: OldRoadmapBooksSectionProps) {
   const beginnerBooks = books.filter(book => book.level === "Beginner");
   const intermediateBooks = books.filter(book => book.level === "Intermediate");
   const advancedBooks = books.filter(book => book.level === "Advanced");
@@ -24,13 +29,13 @@ export function RoadmapBooksSection({ books }: RoadmapBooksSectionProps) {
           {bookList.map((book) => (
             <ResourceCard
               key={book.id}
-              type="book"
+              type="book" // ResourceCard expects a 'type' prop
               title={book.title}
               author={book.author}
               description={book.description}
               imageUrl={book.imageUrl}
               imageHint={book.imageHint || "book cover"}
-              linkUrl={book.amazonLink || "#"}
+              linkUrl={book.amazonLink || "#"} // Assuming amazonLink can be used as a general link
               linkText="View Details"
             />
           ))}
@@ -54,5 +59,3 @@ export function RoadmapBooksSection({ books }: RoadmapBooksSectionProps) {
     </div>
   );
 }
-
-    

@@ -3,7 +3,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { ShieldCheck, Menu, X, MapPinned } from 'lucide-react'; // Added MapPinned for Roadmap
+import { ShieldCheck, Menu, X, MapPinned } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from '@/components/ui/sheet';
 import { cn } from '@/lib/utils';
@@ -15,18 +15,21 @@ const navItems = [
   { href: '/portfolio', label: 'Portfolio' },
   { href: '/qa', label: 'Q&A' },
   { href: '/resources', label: 'Resources' },
-  { href: '/roadmap', label: 'Roadmap' }, // Added Roadmap link
+  { href: '/roadmap', label: 'Roadmap' },
 ];
 
 interface NavLinkProps {
   href: string;
   label: string;
   onClick?: () => void;
+  className?: string;
 }
 
-const NavLink: React.FC<NavLinkProps> = ({ href, label, onClick }) => {
+const NavLink: React.FC<NavLinkProps> = ({ href, label, onClick, className }) => {
   const pathname = usePathname();
-  const isActive = pathname === href;
+  // For roadmap, we want to highlight if any sub-path of /roadmap is active.
+  // For other links, exact match.
+  const isActive = href === '/roadmap' ? pathname.startsWith('/roadmap') : pathname === href;
 
   return (
     <Link
@@ -34,7 +37,8 @@ const NavLink: React.FC<NavLinkProps> = ({ href, label, onClick }) => {
       onClick={onClick}
       className={cn(
         "text-sm font-medium transition-colors hover:text-primary",
-        isActive ? "text-primary font-semibold" : "text-foreground/80"
+        isActive ? "text-primary font-semibold" : "text-foreground/80",
+        className
       )}
     >
       {label}
@@ -52,17 +56,17 @@ export function Header() {
   }, []);
 
 
-  if (!mounted) {
+  if (!mounted) { // Prevents hydration mismatch for theme toggle and mobile menu
     return (
-      <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      <header className="fixed top-0 left-0 right-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container mx-auto flex h-16 items-center justify-between px-4">
           <Link href="/" className="flex items-center gap-2">
             <ShieldCheck className="h-7 w-7 text-primary" />
             <span className="text-xl font-bold text-primary">CyberShield</span>
           </Link>
           <div className="flex items-center gap-2">
-             <div className="h-9 w-9 rounded-md" />
-             <div className="md:hidden h-10 w-10" />
+             <div className="h-9 w-9 rounded-md bg-muted/50 animate-pulse" /> {/* Placeholder for ThemeToggle */}
+             <div className="md:hidden h-10 w-10 bg-muted/50 animate-pulse rounded-md" /> {/* Placeholder for Menu button */}
           </div>
         </div>
       </header>
@@ -71,7 +75,7 @@ export function Header() {
 
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="fixed top-0 left-0 right-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         <Link href="/" className="flex items-center gap-2">
           <ShieldCheck className="h-7 w-7 text-primary" />
@@ -96,7 +100,7 @@ export function Header() {
               </SheetTrigger>
               <SheetContent side="right" className="w-full max-w-xs bg-background p-6">
                 <div className="flex flex-col space-y-6 h-full">
-                  <div className="flex justify-between items-center">
+                  <div className="flex justify-between items-center mb-4">
                     <Link href="/" className="flex items-center gap-2" onClick={() => setIsMobileMenuOpen(false)}>
                       <ShieldCheck className="h-7 w-7 text-primary" />
                       <span className="text-xl font-bold text-primary">CyberShield</span>
@@ -108,13 +112,14 @@ export function Header() {
                         </Button>
                     </SheetClose>
                   </div>
-                  <nav className="flex flex-col space-y-4 mt-4">
+                  <nav className="flex flex-col space-y-1">
                     {navItems.map((item) => (
-                      <NavLink
+                       <NavLink
                         key={item.href}
                         href={item.href}
                         label={item.label}
                         onClick={() => setIsMobileMenuOpen(false)}
+                        className="text-lg py-3 px-2 rounded-md hover:bg-accent/50" // Larger clickable area for mobile
                       />
                     ))}
                   </nav>
@@ -127,5 +132,3 @@ export function Header() {
     </header>
   );
 }
-
-    

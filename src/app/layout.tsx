@@ -1,22 +1,43 @@
+
 import type { Metadata } from 'next';
-import { Roboto_Mono } from 'next/font/google'; // Corrected Google Font import
+import { Roboto_Mono } from 'next/font/google';
 import './globals.css';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { Toaster } from "@/components/ui/toaster";
 import { cn } from '@/lib/utils';
-import { ThemeProvider } from '@/components/layout/ThemeProvider'; // Import ThemeProvider
+import { ThemeProvider } from '@/components/layout/ThemeProvider';
 
-// Configure Roboto Mono font
-const robotoMono = Roboto_Mono({ // Use the imported font object directly
+const robotoMono = Roboto_Mono({
   variable: '--font-roboto-mono',
   subsets: ['latin'],
-  display: 'swap', // Ensure font displays immediately with fallback
+  display: 'swap',
 });
 
+// General metadata for the site
 export const metadata: Metadata = {
-  title: 'CyberShield Portfolio - Tekendra Bhandari',
-  description: 'Portfolio and AI-powered Q&A by Tekendra Bhandari, focusing on Linux, Cybersecurity, and Networking.',
+  title: {
+    default: 'CyberShield Portfolio - Tekendra Bhandari',
+    template: '%s - CyberShield Portfolio',
+  },
+  description: 'Portfolio, AI Q&A, and Cybersecurity Roadmap by Tekendra Bhandari. Specializing in Linux, Cybersecurity, and Networking.',
+  openGraph: {
+    title: 'CyberShield Portfolio - Tekendra Bhandari',
+    description: 'Portfolio, AI Q&A, and Cybersecurity Roadmap.',
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://yourdomain.com', // Replace with your actual domain
+    siteName: 'CyberShield Portfolio',
+     images: [ // Add a default OG image for the whole site
+      {
+        url: 'https://placehold.co/1200x630.png?text=CyberShield+Portfolio', // Replace with your actual default OG image
+        width: 1200,
+        height: 630,
+        alt: 'CyberShield Portfolio',
+      },
+    ],
+  },
+  // Add other general metadata like icons, twitter card info, etc.
 };
 
 export default function RootLayout({
@@ -25,9 +46,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="h-full" suppressHydrationWarning>{/* suppressHydrationWarning for next-themes */}
-      {/* Apply the font variable to the body */}
-      <body className={cn(robotoMono.variable, "font-mono h-full antialiased flex flex-col")}> {/* Use font-mono utility class */}
+    <html lang="en" className="h-full" suppressHydrationWarning>
+      <body className={cn(robotoMono.variable, "font-mono h-full antialiased flex flex-col")}>
         <ThemeProvider
             attribute="class"
             defaultTheme="system"
@@ -35,7 +55,8 @@ export default function RootLayout({
             disableTransitionOnChange
         >
           <Header />
-          <main className="flex-grow container mx-auto px-4 py-8">
+          {/* The main content area will scroll, header/footer can be fixed or scroll with content */}
+          <main className="flex-grow pt-16"> {/* Add padding-top to account for sticky header */}
             {children}
           </main>
           <Footer />

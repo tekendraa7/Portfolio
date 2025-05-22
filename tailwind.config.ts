@@ -1,7 +1,8 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
-    darkMode: ["class"], // Ensure darkMode is set to 'class'
+    darkMode: ["class"], 
     content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -59,7 +60,11 @@ export default {
   				'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
   				border: 'hsl(var(--sidebar-border))',
   				ring: 'hsl(var(--sidebar-ring))'
-  			}
+  			},
+        // Custom colors for roadmap stage headers
+        'roadmap-beginner': '#118AB2',
+        'roadmap-intermediate': '#FF6B6B',
+        'roadmap-advanced': '#06D6A0',
   		},
   		borderRadius: {
   			lg: 'var(--radius)',
