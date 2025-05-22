@@ -29,7 +29,7 @@ export const aboutData = {
   university: "Far Western University",
   bio: "I am a passionate computer engineering student with a strong interest in cybersecurity, Linux systems, and networking. I am dedicated to continuous learning and applying my knowledge to solve real-world problems. This portfolio showcases my journey, projects, and the resources I find valuable.",
   profileImageUrl: "https://avatars.githubusercontent.com/u/182990458?v=4",
-  profileImageHint: "profile picture",
+  profileImageHint: "cartoon portrait", // Updated hint
   skills: [
     { name: "Linux Administration", level: 85 },
     { name: "Network Configuration", level: 75 },
