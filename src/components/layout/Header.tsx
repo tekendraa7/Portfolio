@@ -3,18 +3,19 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { ShieldCheck, Menu, X } from 'lucide-react';
+import { ShieldCheck, Menu, X, MapPinned } from 'lucide-react'; // Added MapPinned for Roadmap
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from '@/components/ui/sheet';
 import { cn } from '@/lib/utils';
 import { useState, useEffect } from 'react';
-import { ThemeToggle } from '@/components/layout/ThemeToggle'; // Import the new ThemeToggle component
+import { ThemeToggle } from '@/components/layout/ThemeToggle';
 
 const navItems = [
   { href: '/', label: 'Home' },
   { href: '/portfolio', label: 'Portfolio' },
   { href: '/qa', label: 'Q&A' },
   { href: '/resources', label: 'Resources' },
+  { href: '/roadmap', label: 'Roadmap' }, // Added Roadmap link
 ];
 
 interface NavLinkProps {
@@ -33,7 +34,7 @@ const NavLink: React.FC<NavLinkProps> = ({ href, label, onClick }) => {
       onClick={onClick}
       className={cn(
         "text-sm font-medium transition-colors hover:text-primary",
-        isActive ? "text-primary font-semibold" : "text-foreground/80" // Make active link bolder
+        isActive ? "text-primary font-semibold" : "text-foreground/80"
       )}
     >
       {label}
@@ -52,7 +53,6 @@ export function Header() {
 
 
   if (!mounted) {
-    // Simplified header during SSR to avoid hydration issues
     return (
       <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container mx-auto flex h-16 items-center justify-between px-4">
@@ -60,11 +60,8 @@ export function Header() {
             <ShieldCheck className="h-7 w-7 text-primary" />
             <span className="text-xl font-bold text-primary">CyberShield</span>
           </Link>
-          {/* Placeholder for nav items or hamburger */}
           <div className="flex items-center gap-2">
-            {/* Placeholder for theme toggle */}
-             <div className="h-9 w-9 rounded-md" /> 
-            {/* Placeholder for menu button */}
+             <div className="h-9 w-9 rounded-md" />
              <div className="md:hidden h-10 w-10" />
           </div>
         </div>
@@ -78,11 +75,9 @@ export function Header() {
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         <Link href="/" className="flex items-center gap-2">
           <ShieldCheck className="h-7 w-7 text-primary" />
-          {/* Use primary color for the title for hacker theme */}
           <span className="text-xl font-bold text-primary">CyberShield</span>
         </Link>
 
-        {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-6">
           {navItems.map((item) => (
             <NavLink key={item.href} href={item.href} label={item.label} />
@@ -90,10 +85,7 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-2">
-          {/* Theme Toggle Button */}
           <ThemeToggle />
-
-          {/* Mobile Navigation */}
           <div className="md:hidden">
             <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
               <SheetTrigger asChild>
@@ -135,3 +127,5 @@ export function Header() {
     </header>
   );
 }
+
+    
