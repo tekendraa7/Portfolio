@@ -7,7 +7,7 @@ import { aboutData, projectsData, contactLinks, contactDetails } from "@/data/po
 
 export default function PortfolioPage() {
   return (
-    <div className="space-y-16">
+    <div className="container mx-auto px-4 py-8 space-y-16">
       <SectionTitle>About Me</SectionTitle>
       <AboutSection data={aboutData} />
 
