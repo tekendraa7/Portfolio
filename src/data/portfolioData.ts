@@ -1,3 +1,4 @@
+
 import type { LucideIcon } from "lucide-react";
 import { Github, Linkedin, Mail, Smartphone, Laptop } from "lucide-react";
 
@@ -29,7 +30,7 @@ export const aboutData = {
   university: "Far Western University",
   bio: "I am a passionate computer engineering student with a strong interest in cybersecurity, Linux systems, and networking. I am dedicated to continuous learning and applying my knowledge to solve real-world problems. This portfolio showcases my journey, projects, and the resources I find valuable.",
   profileImageUrl: "https://avatars.githubusercontent.com/u/182990458?v=4",
-  profileImageHint: "cartoon portrait", // Updated hint
+  profileImageHint: "cartoon portrait",
   skills: [
     { name: "Linux Administration", level: 85 },
     { name: "Network Configuration", level: 75 },
@@ -48,7 +49,7 @@ export const projectsData: Project[] = [
     technologies: ["Next.js", "React", "TypeScript", "Genkit AI", "Tailwind CSS"],
     imageUrl: "https://placehold.co/400x300.png",
     imageHint: "ai chatbot",
-    repoUrl: "https://github.com/tekendraa7/Portfolio-CyberShield", 
+    repoUrl: "https://github.com/tekendraa7/Portfolio-CyberShield",
   },
   {
     id: "2",
@@ -118,7 +119,7 @@ export const recommendedBooks: Book[] = [
     author: "Doug Lowe",
     description: "A comprehensive guide covering everything from basic network setup to virtualizaton and cloud computing.",
     imageUrl: "https://placehold.co/200x300.png",
-    imageHint: "book cover",
+    imageHint: "networking book",
     amazonLink: "#",
   },
   {
@@ -127,7 +128,7 @@ export const recommendedBooks: Book[] = [
     author: "Joseph Steinberg",
     description: "Learn how to protect your personal and business information from cyber threats.",
     imageUrl: "https://placehold.co/200x300.png",
-    imageHint: "book cover",
+    imageHint: "cybersecurity book",
     amazonLink: "#",
   },
   {
@@ -136,7 +137,7 @@ export const recommendedBooks: Book[] = [
     author: "William Shotts",
     description: "Master the Linux command line with this in-depth guide, perfect for beginners and experienced users alike.",
     imageUrl: "https://placehold.co/200x300.png",
-    imageHint: "book cover",
+    imageHint: "linux book",
     amazonLink: "#",
   },
   {
@@ -145,7 +146,7 @@ export const recommendedBooks: Book[] = [
     author: "Jon Erickson",
     description: "A classic book that delves into the technical details of hacking and exploit development.",
     imageUrl: "https://placehold.co/200x300.png",
-    imageHint: "book cover",
+    imageHint: "hacking book",
     amazonLink: "#",
   },
 ];
@@ -199,7 +200,7 @@ export const freeCourseSuggestions: Course[] = [
     category: "Cybersecurity",
     isFree: true,
     imageUrl: "https://placehold.co/300x200.png",
-    imageHint: "cisco logo",
+    imageHint: "cybersecurity course",
   },
   {
     id: "2",
@@ -210,7 +211,7 @@ export const freeCourseSuggestions: Course[] = [
     category: "Cybersecurity",
     isFree: true, // Often free tiers available
     imageUrl: "https://placehold.co/300x200.png",
-    imageHint: "ethical hacking",
+    imageHint: "ethical hacking course",
   },
   {
     id: "3",
@@ -221,7 +222,7 @@ export const freeCourseSuggestions: Course[] = [
     category: "Networking",
     isFree: true,
     imageUrl: "https://placehold.co/300x200.png",
-    imageHint: "network course",
+    imageHint: "networking course",
   },
   {
     id: "4",
@@ -231,7 +232,7 @@ export const freeCourseSuggestions: Course[] = [
     url: "https://www.netacad.com/courses/os-it/ndg-linux-essentials",
     category: "Linux",
     isFree: true,
-    imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuYg6bzmuG8uh1FshnVeC5DkB9HvuTdZsIrQ&s",
-    imageHint: "linux penguin",
+    imageUrl: "https://placehold.co/300x200.png", // Standardized to placeholder
+    imageHint: "linux course",
   },
 ];
