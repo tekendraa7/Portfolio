@@ -61,16 +61,29 @@ export default {
   				border: 'hsl(var(--sidebar-border))',
   				ring: 'hsl(var(--sidebar-ring))'
   			},
-        // Custom colors for roadmap stage headers
-        'roadmap-beginner': '#118AB2',
-        'roadmap-intermediate': '#FF6B6B',
-        'roadmap-advanced': '#06D6A0',
+        // Cyberpunk Neon Colors
+        'neon-cyan': '#00f5d4',     // hsl(172, 100%, 48%)
+        'hot-pink': '#ff006e',      // hsl(332, 100%, 50%)
+        'electric-blue': '#3a86ff', // hsl(220, 100%, 61%)
+        'bright-lime': '#caffbf',   // hsl(99, 100%, 87%)
+        'deep-black': '#090909',    // hsl(0, 0%, 4%)
+        'light-text': '#F1F1F1',    // hsl(0, 0%, 95%)
+
+        // Custom colors for roadmap stage headers - Mapped to Cyberpunk Palette
+        'roadmap-beginner': 'hsl(var(--primary))', // Neon Cyan
+        'roadmap-intermediate': 'hsl(var(--accent))', // Hot Pink
+        'roadmap-advanced': 'hsl(220, 100%, 61%)', // Electric Blue
   		},
   		borderRadius: {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
   			sm: 'calc(var(--radius) - 4px)'
   		},
+      boxShadow: { // Adding custom glow effects
+        'glow-primary': '0 0 8px hsl(var(--primary)), 0 0 16px hsl(var(--primary)), 0 0 24px hsl(var(--primary))',
+        'glow-accent': '0 0 8px hsl(var(--accent)), 0 0 16px hsl(var(--accent)), 0 0 24px hsl(var(--accent))',
+        'glow-blue': '0 0 8px #3a86ff, 0 0 16px #3a86ff, 0 0 24px #3a86ff',
+      },
   		keyframes: {
   			'accordion-down': {
   				from: {
@@ -92,7 +105,10 @@ export default {
   		animation: {
   			'accordion-down': 'accordion-down 0.2s ease-out',
   			'accordion-up': 'accordion-up 0.2s ease-out'
-  		}
+  		},
+      fontFamily: { // Ensure the new font can be used via Tailwind class if needed
+        'share-tech-mono': ['var(--font-share-tech-mono)', 'monospace'],
+      }
   	}
   },
   plugins: [require("tailwindcss-animate")],

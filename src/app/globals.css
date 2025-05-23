@@ -1,107 +1,114 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 /* Set the default font family using the CSS variable */
 body {
-  font-family: var(--font-roboto-mono), monospace; /* Use the Roboto Mono variable and fallback to monospace */
+  font-family: var(--font-share-tech-mono), monospace; /* Use the Share Tech Mono variable */
 }
 
 @layer base {
   :root {
-    /* Light Mode - Hacker/Terminal Inspired */
-    --background: 210 15% 98%; /* Very light gray, almost white */
-    --foreground: 210 20% 10%; /* Very dark gray, almost black */
+    /* Cyberpunk Light Mode (Conceptual - Cyberpunk is typically dark) */
+    --background: 210 0% 95%; /* Very light gray, almost white */
+    --foreground: 0 0% 6%; /* Deep black for text */
 
-    --muted: 210 15% 90%; /* Light gray */
-    --muted-foreground: 210 10% 45%; /* Medium-dark gray */
+    --muted: 210 0% 88%; /* Lighter gray */
+    --muted-foreground: 0 0% 25%; /* Darker gray */
 
-    --popover: 210 15% 100%; /* White */
-    --popover-foreground: 210 20% 10%;
+    --popover: 210 0% 100%; /* White */
+    --popover-foreground: 0 0% 6%;
 
-    --card: 210 15% 100%; /* White */
-    --card-foreground: 210 20% 10%;
+    --card: 210 0% 100%; /* White */
+    --card-foreground: 0 0% 6%;
 
-    --border: 210 10% 88%; /* Lighter gray border */
-    --input: 210 10% 88%; /* Input border */
+    --border: 172 100% 38%; /* Neon Cyan for subtle borders */
+    --input: 172 100% 38%; 
 
-    --primary: 120 70% 35%; /* Dark Green */
-    --primary-foreground: 120 10% 98%; /* Very Light Green/White */
+    --primary: 172 100% 48%; /* Neon Cyan: #00f5d4 */
+    --primary-foreground: 0 0% 4%; /* Deep Black for text on primary */
 
-    --secondary: 210 15% 92%; /* Slightly darker light gray */
-    --secondary-foreground: 120 60% 25%; /* Darker Green */
+    --secondary: 210 0% 80%; /* Lighter gray for secondary elements */
+    --secondary-foreground: 0 0% 10%; /* Dark text on secondary */
 
-    --accent: 210 70% 55%; /* Medium Blue */
-    --accent-foreground: 0 0% 100%; /* White */
+    --accent: 332 100% 50%; /* Hot Pink: #ff006e */
+    --accent-foreground: 0 0% 95%; /* Light text on accent */
 
-    --destructive: 0 72% 51%; /* Standard destructive red */
+    --destructive: 0 80% 55%; /* Vivid Red */
     --destructive-foreground: 0 0% 98%;
 
-    --ring: 120 70% 45%; /* Ring color based on primary (green) */
+    --ring: 172 100% 58%; /* Brighter Neon Cyan for rings */
 
-    --radius: 0.5rem;
+    --radius: 0.3rem; /* Slightly sharper radius for cyberpunk */
 
-    --chart-1: 120 60% 40%; /* Green */
-    --chart-2: 210 65% 50%; /* Blue */
-    --chart-3: 180 50% 45%; /* Cyan */
-    --chart-4: 45 70% 55%;  /* Yellow-Orange */
-    --chart-5: 270 60% 60%; /* Purple */
+    /* Chart colors can remain or be adapted to neon palette */
+    --chart-1: 172 100% 48%; /* Neon Cyan */
+    --chart-2: 332 100% 50%; /* Hot Pink */
+    --chart-3: 220 100% 61%; /* Electric Blue */
+    --chart-4: 99 100% 87%;  /* Bright Lime */
+    --chart-5: 270 70% 65%; /* A purple to complement */
 
-    --sidebar-background: 210 15% 95%; /* Slightly off-white */
-    --sidebar-foreground: 210 20% 15%;
-    --sidebar-primary: 120 70% 35%;
-    --sidebar-primary-foreground: 120 10% 98%;
-    --sidebar-accent: 210 70% 55%;
-    --sidebar-accent-foreground: 0 0% 100%;
-    --sidebar-border: 210 10% 88%;
-    --sidebar-ring: 120 70% 45%;
+    --sidebar-background: 210 0% 92%; 
+    --sidebar-foreground: 0 0% 10%;
+    --sidebar-primary: 172 100% 48%;
+    --sidebar-primary-foreground: 0 0% 4%;
+    --sidebar-accent: 332 100% 50%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 172 100% 38%;
+    --sidebar-ring: 172 100% 58%;
+
+    /* Glow colors */
+    --glow-cyan: 0 0 10px hsl(var(--primary)), 0 0 20px hsl(var(--primary));
+    --glow-pink: 0 0 10px hsl(var(--accent)), 0 0 20px hsl(var(--accent));
+    --glow-blue: 0 0 10px hsl(220, 100%, 61%), 0 0 20px hsl(220, 100%, 61%);
   }
 
   .dark {
-    /* Dark Mode - Classic Hacker Terminal */
-    --background: 220 20% 5%; /* Very dark blue/black */
-    --foreground: 120 70% 85%; /* Light Green text */
+    /* Cyberpunk Dark Mode */
+    --background: 0 0% 4%; /* Deep Black: #090909 */
+    --foreground: 0 0% 95%; /* Light Text: #F1F1F1 */
 
-    --muted: 220 15% 15%; /* Dark gray */
-    --muted-foreground: 210 15% 65%; /* Lighter gray */
+    --muted: 0 0% 10%; /* Slightly lighter black/dark gray */
+    --muted-foreground: 0 0% 60%; /* Lighter gray for muted text */
 
-    --popover: 220 25% 8%; /* Slightly lighter dark */
-    --popover-foreground: 120 70% 85%;
+    --popover: 0 0% 8%; /* Dark popover background */
+    --popover-foreground: 0 0% 95%;
 
-    --card: 220 20% 10%; /* Darker card background */
-    --card-foreground: 120 70% 85%;
+    --card: 0 0% 7%; /* Dark card background */
+    --card-foreground: 0 0% 95%;
 
-    --border: 210 15% 25%; /* Dark border */
-    --input: 210 15% 25%; /* Input border */
+    --border: 172 100% 38%; /* Neon Cyan for borders */
+    --input: 172 100% 38%; /* Neon Cyan for input borders */
 
-    --primary: 120 80% 60%; /* Brighter Green */
-    --primary-foreground: 220 20% 5%; /* Dark background for contrast */
+    --primary: 172 100% 48%; /* Neon Cyan: #00f5d4 */
+    --primary-foreground: 0 0% 4%; /* Deep Black for text on primary */
 
-    --secondary: 220 15% 18%; /* Slightly lighter dark gray */
-    --secondary-foreground: 120 70% 80%; /* Light Green */
+    --secondary: 0 0% 12%; /* Dark gray for secondary elements */
+    --secondary-foreground: 172 100% 70%; /* Lighter Neon Cyan text */
 
-    --accent: 210 80% 70%; /* Brighter Blue */
-    --accent-foreground: 220 20% 5%; /* Dark background for contrast */
+    --accent: 332 100% 50%; /* Hot Pink: #ff006e */
+    --accent-foreground: 0 0% 95%; /* Light text on accent */
 
-    --destructive: 0 63% 50%; /* Brighter red */
+    --destructive: 0 80% 55%; /* Vivid Red */
     --destructive-foreground: 0 0% 98%;
 
-    --ring: 120 80% 50%; /* Ring color based on primary (green) */
+    --ring: 172 100% 58%; /* Brighter Neon Cyan for rings */
+    
+    --chart-1: 172 100% 48%; 
+    --chart-2: 332 100% 50%; 
+    --chart-3: 220 100% 61%; 
+    --chart-4: 99 100% 70%;  /* Adjusted Bright Lime for dark mode contrast */
+    --chart-5: 270 70% 65%;
 
-    --chart-1: 120 70% 65%; /* Green */
-    --chart-2: 210 75% 60%; /* Blue */
-    --chart-3: 180 60% 55%; /* Cyan */
-    --chart-4: 45 80% 65%;  /* Yellow-Orange */
-    --chart-5: 270 70% 70%; /* Purple */
-
-    --sidebar-background: 220 20% 8%;
-    --sidebar-foreground: 120 70% 85%;
-    --sidebar-primary: 120 80% 60%;
-    --sidebar-primary-foreground: 220 20% 5%;
-    --sidebar-accent: 210 80% 70%;
-    --sidebar-accent-foreground: 220 20% 5%;
-    --sidebar-border: 210 15% 25%;
-    --sidebar-ring: 120 80% 50%;
+    --sidebar-background: 0 0% 6%; 
+    --sidebar-foreground: 0 0% 90%;
+    --sidebar-primary: 172 100% 48%;
+    --sidebar-primary-foreground: 0 0% 4%;
+    --sidebar-accent: 332 100% 50%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 172 100% 38%;
+    --sidebar-ring: 172 100% 58%;
   }
 }
 
@@ -111,6 +118,32 @@ body {
   }
   body {
     @apply bg-background text-foreground;
-    /* Ensure the font-mono utility class is applied in layout.tsx if needed elsewhere */
+  }
+}
+
+/* Custom button hover glow for cyberpunk theme */
+@layer components {
+  .btn-cyberpunk-hover-glow-primary {
+    @apply transition-all duration-300;
+  }
+  .btn-cyberpunk-hover-glow-primary:hover {
+    box-shadow: 0 0 8px hsl(var(--primary)), 0 0 16px hsl(var(--primary)), 0 0 24px hsl(var(--primary));
+    transform: scale(1.05);
+  }
+  
+  .btn-cyberpunk-hover-glow-accent {
+    @apply transition-all duration-300;
+  }
+  .btn-cyberpunk-hover-glow-accent:hover {
+    box-shadow: 0 0 8px hsl(var(--accent)), 0 0 16px hsl(var(--accent)), 0 0 24px hsl(var(--accent));
+    transform: scale(1.05);
+  }
+
+  /* General glow for other elements if needed */
+  .cyber-glow-primary {
+    box-shadow: 0 0 5px hsl(var(--primary)), 0 0 10px hsl(var(--primary));
+  }
+  .cyber-glow-accent {
+    box-shadow: 0 0 5px hsl(var(--accent)), 0 0 10px hsl(var(--accent));
   }
 }
