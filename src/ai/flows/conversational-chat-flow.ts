@@ -13,19 +13,19 @@ import {ai} from '@/ai/genkit';
 import {z} from 'genkit';
 import type {MessageData} from 'genkit'; // Import MessageData
 
-export const ChatMessageSchema = z.object({
+const ChatMessageSchema = z.object({
   role: z.enum(['user', 'model']),
   content: z.string(),
 });
 export type ChatMessage = z.infer<typeof ChatMessageSchema>;
 
-export const ConversationalChatInputSchema = z.object({
+const ConversationalChatInputSchema = z.object({
   currentMessage: z.string().describe('The latest message from the user.'),
   history: z.array(ChatMessageSchema).optional().describe('The conversation history.'),
 });
 export type ConversationalChatInput = z.infer<typeof ConversationalChatInputSchema>;
 
-export const ConversationalChatOutputSchema = z.object({
+const ConversationalChatOutputSchema = z.object({
   reply: z.string().describe('The AI-generated reply.'),
 });
 export type ConversationalChatOutput = z.infer<typeof ConversationalChatOutputSchema>;
@@ -74,3 +74,4 @@ const conversationalChatFlow = ai.defineFlow(
     return { reply: llmResponse.text ?? "Sorry, I couldn't generate a response at this moment." };
   }
 );
+
