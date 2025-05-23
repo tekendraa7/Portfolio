@@ -1,3 +1,4 @@
+
 import Image from "next/image";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
@@ -24,9 +25,10 @@ export function AboutSection({ data }: AboutSectionProps) {
             />
           )}
         </div>
-        {/* Text content container - centered */}
-        <div className="text-center">
-          <CardHeader className="p-0 mb-4">
+        
+        {/* Text content container */}
+        <div>
+          <CardHeader className="p-0 mb-4 text-center"> {/* Centered Header */}
             <CardTitle className="text-3xl font-bold text-primary">{data.name}</CardTitle>
             <p className="text-lg text-accent">{data.title}</p>
             <div className="flex items-center justify-center text-muted-foreground mt-1">
@@ -35,10 +37,12 @@ export function AboutSection({ data }: AboutSectionProps) {
             </div>
           </CardHeader>
           <CardContent className="p-0">
-            <p className="text-foreground/90 mb-6 max-w-xl mx-auto">{data.bio}</p>
+            {/* Bio: centered block, text also centered for consistency as it's short */}
+            <p className="text-foreground/90 mb-6 max-w-xl mx-auto text-center">{data.bio}</p>
 
-            <h3 className="text-xl font-semibold text-primary mb-3 mt-8">Skills</h3>
-            <div className="space-y-3 max-w-md mx-auto">
+            {/* Skills: centered heading, then centered block for skills */}
+            <h3 className="text-xl font-semibold text-primary mb-3 mt-8 text-center">Skills</h3>
+            <div className="space-y-3 max-w-md mx-auto"> {/* Centers the block of skills */}
               {data.skills.map((skill) => (
                 <div key={skill.name}>
                   <div className="flex justify-between mb-1">
