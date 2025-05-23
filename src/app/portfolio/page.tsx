@@ -1,3 +1,4 @@
+
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { AboutSection } from "@/components/portfolio/AboutSection";
 import { ProjectsSection } from "@/components/portfolio/ProjectsSection";
@@ -10,11 +11,11 @@ export default function PortfolioPage() {
       <SectionTitle>About Me</SectionTitle>
       <AboutSection data={aboutData} />
 
-      <SectionTitle>My Projects</SectionTitle>
-      <ProjectsSection projects={projectsData} />
-      
       <SectionTitle>Get In Touch</SectionTitle>
       <ContactSection contactLinks={contactLinks} contactDetails={contactDetails} />
+      
+      <SectionTitle>My Projects</SectionTitle>
+      <ProjectsSection projects={projectsData} />
     </div>
   );
 }
