@@ -1,6 +1,6 @@
 
 import type { LucideIcon } from "lucide-react";
-import { Rss, BookOpen, ShieldAlert, Landmark, Users, Globe, ExternalLink, Newspaper } from "lucide-react";
+import { Rss, BookOpen, ShieldAlert, Landmark, Users, Globe, ExternalLink, Newspaper, MessageSquare } from "lucide-react";
 
 export interface BlogResource {
   id: string;
@@ -27,6 +27,15 @@ export interface CommunityFeed {
   name: string;
   url: string;
   icon?: LucideIcon;
+}
+
+export interface DiscordServer {
+  id: string;
+  name: string;
+  url: string;
+  description?: string;
+  icon: LucideIcon;
+  category: string;
 }
 
 export const cybersecurityBlogs: BlogResource[] = [
@@ -176,3 +185,69 @@ export const communityFeeds: CommunityFeed[] = [
   { id: "cf3", name: "r/netsecstudents", url: "https://www.reddit.com/r/netsecstudents/", icon: Rss },
 ];
 
+export const discordServers: DiscordServer[] = [
+  {
+    id: "ds1",
+    name: "TryHackMe Official Discord",
+    url: "https://discord.gg/tryhackme",
+    description: "The official Discord server for TryHackMe users.",
+    icon: MessageSquare,
+    category: "Platform Community",
+  },
+  {
+    id: "ds2",
+    name: "Hack The Box Discord",
+    url: "https://discord.gg/hackthebox",
+    description: "Connect with the Hack The Box community.",
+    icon: MessageSquare,
+    category: "Platform Community",
+  },
+  {
+    id: "ds3",
+    name: "The Cyber Mentor Community",
+    url: "https://discord.gg/thecybermentor",
+    description: "Heath Adams' (The Cyber Mentor) community server.",
+    icon: MessageSquare,
+    category: "Influencer Community",
+  },
+  {
+    id: "ds4",
+    name: "InfoSec Prep",
+    url: "https://discord.gg/infosec",
+    description: "A general server for InfoSec discussions and preparation.",
+    icon: MessageSquare,
+    category: "General InfoSec",
+  },
+  {
+    id: "ds5",
+    name: "John Hammond's Discord",
+    url: "https://discord.gg/johnhammond",
+    description: "Community server for John Hammond's followers.",
+    icon: MessageSquare,
+    category: "Influencer Community",
+  },
+  {
+    id: "ds6",
+    name: "TCM Security Discord",
+    url: "https://discord.gg/tcmsecurity",
+    description: "Official Discord for TCM Security and its courses.",
+    icon: MessageSquare,
+    category: "Training Provider",
+  },
+  {
+    id: "ds7",
+    name: "Blue Team Village",
+    url: "https://discord.gg/blueteamvillage",
+    description: "A community focused on blue team skills and defense.",
+    icon: MessageSquare,
+    category: "Blue Team",
+  },
+  // { // Uncomment and add URL if known
+  //   id: "ds8",
+  //   name: "Nepali Ethical Hackers",
+  //   url: "#", // Replace with actual link
+  //   description: "A community for ethical hackers in Nepal.",
+  //   icon: MessageSquare,
+  //   category: "Local Community",
+  // },
+];

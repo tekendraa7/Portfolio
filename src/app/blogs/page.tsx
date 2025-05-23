@@ -6,8 +6,8 @@ import { SectionTitle } from '@/components/ui/SectionTitle';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { ExternalLink, Rss } from 'lucide-react';
-import { cybersecurityBlogs, owaspTop10, owaspGeneralLink, researchHubs, communityFeeds } from '@/data/blogsData';
+import { ExternalLink, Rss, MessageSquare } from 'lucide-react'; // Added MessageSquare
+import { cybersecurityBlogs, owaspTop10, owaspGeneralLink, researchHubs, communityFeeds, discordServers } from '@/data/blogsData'; // Added discordServers
 import { InfoCard } from '@/components/blogs/InfoCard';
 
 export const metadata: Metadata = {
@@ -116,8 +116,28 @@ export default function BlogsPage() {
           ))}
         </div>
       </section>
+      
+      {/* Section 4: Cybersecurity Discord Servers */}
+      <section>
+        <SectionTitle className="md:text-left">💬 Join the Community: Top Discord Servers</SectionTitle>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          {discordServers.map((server) => (
+            <InfoCard
+              key={server.id}
+              id={server.id}
+              title={server.name}
+              description={server.description}
+              url={server.url}
+              icon={server.icon} // Using MessageSquare or similar
+              category={server.category}
+              linkText="Join Server"
+              imageHint="discord community" // Generic hint for Discord servers
+            />
+          ))}
+        </div>
+      </section>
 
-      {/* Section 4: Community-Powered News Feeds */}
+      {/* Section 5: Community-Powered News Feeds */}
       <section>
         <SectionTitle className="md:text-left">🌐 Community-Powered News Feeds</SectionTitle>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
