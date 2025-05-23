@@ -1,7 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowRight, BotMessageSquareIcon, BriefcaseIcon, Rss as BlogsIcon, ShieldCheck, Newspaper } from "lucide-react"; // Changed LightbulbIcon to Newspaper/Rss
+import { ArrowRight, BotMessageSquareIcon, BriefcaseIcon, ShieldCheck, Newspaper } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -47,9 +47,9 @@ export default function Home() {
               <p className="text-muted-foreground text-center">
                 Discover my projects, skills, and journey in computer engineering.
               </p>
-              <Button variant="link" asChild className="mt-4 text-accent p-0 block mx-auto">
-                <Link href="/portfolio">View Portfolio <ArrowRight className="ml-1 h-4 w-4" /></Link>
-              </Button>
+              <Link href="/portfolio" className="mt-4 text-accent p-0 block mx-auto hover:underline flex items-center justify-center">
+                View Portfolio <ArrowRight className="ml-1 h-4 w-4" />
+              </Link>
             </CardContent>
           </Card>
 
@@ -62,24 +62,26 @@ export default function Home() {
               <p className="text-muted-foreground text-center">
                 Interact with an AI to get answers on Linux, Cybersecurity, and Networking.
               </p>
-              <Button variant="link" asChild className="mt-4 text-accent p-0 block mx-auto">
-                <Link href="/qa">Try the Chatbot <ArrowRight className="ml-1 h-4 w-4" /></Link>
-              </Button>
+              <Link href="/qa" className="mt-4 text-accent p-0 block mx-auto hover:underline flex items-center justify-center">
+                Try the Chatbot <ArrowRight className="ml-1 h-4 w-4" />
+              </Link>
             </CardContent>
           </Card>
 
           <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300">
             <CardHeader className="items-center">
-              <Newspaper className="h-12 w-12 text-accent mb-2" /> {/* Changed Icon */}
-              <CardTitle className="text-xl text-center">Blogs & Resources</CardTitle> {/* Changed Title */}
+              <Newspaper className="h-12 w-12 text-accent mb-2" />
+              <CardTitle className="text-xl text-center">Blogs & Resources</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-muted-foreground text-center">
-                Curated cybersecurity blogs, OWASP Top 10, research hubs, and community feeds. {/* Changed Description */}
-              </p>
-              <Button variant="link" asChild className="mt-4 text-accent p-0 block mx-auto">
-                <Link href="/blogs">Explore Blogs <ArrowRight className="ml-1 h-4 w-4" /></Link> {/* Changed Link */}
-              </Button>
+              <div>
+                <p className="text-muted-foreground text-center">
+                  Curated cybersecurity blogs, OWASP Top 10, research hubs, and community feeds.
+                </p>
+                <Link href="/blogs" className="mt-4 text-accent p-0 block mx-auto hover:underline flex items-center justify-center">
+                  Explore Blogs <ArrowRight className="ml-1 h-4 w-4" />
+                </Link>
+              </div>
             </CardContent>
           </Card>
         </div>
