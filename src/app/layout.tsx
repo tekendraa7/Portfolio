@@ -1,18 +1,18 @@
 
 import type { Metadata } from 'next';
-import { Share_Tech_Mono } from 'next/font/google'; // Changed font
+import { Share_Tech_Mono } from 'next/font/google';
 import './globals.css';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { Toaster } from "@/components/ui/toaster";
 import { cn } from '@/lib/utils';
 import { ThemeProvider } from '@/components/layout/ThemeProvider';
+import { FloatingChatButton } from '@/components/chat/FloatingChatButton'; // Import the chat button
 
-// Changed to Share Tech Mono
 const shareTechMono = Share_Tech_Mono({
   variable: '--font-share-tech-mono',
   subsets: ['latin'],
-  weight: ['400'], // Share Tech Mono only has a regular 400 weight
+  weight: ['400'],
   display: 'swap',
 });
 
@@ -27,11 +27,11 @@ export const metadata: Metadata = {
     description: 'Portfolio, AI Q&A, and Cybersecurity Roadmap.',
     type: 'website',
     locale: 'en_US',
-    url: 'https://portfolio-tekendraas-projects.vercel.app/', // Updated URL
+    url: 'https://portfolio-tekendraas-projects.vercel.app/', 
     siteName: 'CyberShield Portfolio',
      images: [
       {
-        url: 'https://placehold.co/1200x630.png?text=CyberShield+Portfolio&bg=0F0F0F&text=00F5D4', // Cyberpunk OG image
+        url: 'https://placehold.co/1200x630.png?text=CyberShield+Portfolio&bg=0F0F0F&text=00F5D4',
         width: 1200,
         height: 630,
         alt: 'CyberShield Portfolio',
@@ -48,11 +48,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="h-full" suppressHydrationWarning>
-      {/* Apply the font variable to the body */}
-      <body className={cn(shareTechMono.variable, "font-mono h-full antialiased flex flex-col")}> {/* Use font-mono utility class */}
+      <body className={cn(shareTechMono.variable, "font-mono h-full antialiased flex flex-col")}>
         <ThemeProvider
             attribute="class"
-            defaultTheme="dark" // Default to dark for cyberpunk theme
+            defaultTheme="dark" 
             enableSystem
             disableTransitionOnChange
         >
@@ -62,6 +61,7 @@ export default function RootLayout({
           </main>
           <Footer />
           <Toaster />
+          <FloatingChatButton /> {/* Add floating chat button here */}
         </ThemeProvider>
       </body>
     </html>

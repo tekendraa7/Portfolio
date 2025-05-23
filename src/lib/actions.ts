@@ -1,8 +1,10 @@
+
 "use server";
 
 import { z } from "zod";
 import { linuxCybersecurityNetworkingQA as genAIQuery } from "@/ai/flows/linux-cybersecurity-networking-qa";
 import type { LinuxCybersecurityNetworkingQAInput, LinuxCybersecurityNetworkingQAOutput } from "@/ai/flows/linux-cybersecurity-networking-qa";
+import { conversationalChat as genAIChatQuery, type ConversationalChatInput, type ConversationalChatOutput, type ChatMessage } from "@/ai/flows/conversational-chat-flow";
 
 
 // Schema for contact form
@@ -67,7 +69,44 @@ export async function askAI(
     const result = await genAIQuery(input);
     return result;
   } catch (error) {
-    console.error("Error calling AI flow:", error);
+    console.error("Error calling AI Q&A flow:", error);
     return { error: "Sorry, I couldn't process your question right now. Please try again later." };
+  }
+}
+
+// Frontend message structure for the chat component
+interface FrontendChatMessage {
+  id: string;
+  sender: "user" | "ai";
+  text: string;
+}
+
+// Action for Conversational Chat
+export async function sendChatMessage(
+  currentMessage: string,
+  history: FrontendChatMessage[]
+): Promise<ConversationalChatOutput | { error: string }> {
+  try {
+    // Transform frontend history to the format expected by the Genkit flow
+    const flowHistory: ChatMessage[] = history.map(msg => ({
+      role: msg.sender === "user" ? "user" : "model",
+      content: msg.text,
+    }));
+
+    const input: ConversationalChatInput = {
+      currentMessage,
+      history: flowHistory,
+    };
+    
+    const result = await genAIChatQuery(input);
+    return result;
+  } catch (error) {
+    console.error("Error calling conversational chat flow:", error);
+    let errorMessage = "Sorry, I couldn't process your message right now. Please try again later.";
+    if (error instanceof Error) {
+        // errorMessage += ` Details: ${error.message}`; // You might not want to expose raw error messages to the client
+        console.error("Detailed error:", error.message, error.stack);
+    }
+    return { error: errorMessage };
   }
 }
