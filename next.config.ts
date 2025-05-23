@@ -1,7 +1,6 @@
 import type {NextConfig} from 'next';
 
 const nextConfig: NextConfig = {
-  output: 'standalone', // Added for Vercel optimization
   typescript: {
     ignoreBuildErrors: true,
   },
@@ -12,7 +11,7 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'placehold.co', // Added for placeholder images
+        hostname: 'placehold.co',
         port: '',
         pathname: '/**',
       },
