@@ -8,6 +8,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { cn } from '@/lib/utils';
 import { ThemeProvider } from '@/components/layout/ThemeProvider';
 import { FloatingChatButton } from '@/components/chat/FloatingChatButton'; // Import the chat button
+import imageData from '@/lib/placeholder-images.json';
 
 const shareTechMono = Share_Tech_Mono({
   variable: '--font-share-tech-mono',
@@ -31,7 +32,7 @@ export const metadata: Metadata = {
     siteName: 'CyberShield Portfolio',
      images: [
       {
-        url: 'https://placehold.co/1200x630.png?text=CyberShield+Portfolio&bg=0F0F0F&text=00F5D4',
+        url: imageData.openGraph.main.url,
         width: 1200,
         height: 630,
         alt: 'CyberShield Portfolio',

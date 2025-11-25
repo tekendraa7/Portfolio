@@ -1,0 +1,78 @@
+{
+  "cybersecurityBlogs": {
+    "krebsonsecurity": {
+      "url": "https://picsum.photos/seed/krebsonsecurity/150/50",
+      "hint": "security logo"
+    },
+    "thehackernews": {
+      "url": "https://picsum.photos/seed/thehackernews/150/50",
+      "hint": "hacker logo"
+    },
+    "bleepingcomputer": {
+      "url": "https://picsum.photos/seed/bleepingcomputer/150/50",
+      "hint": "computer logo"
+    },
+    "exploitdb": {
+      "url": "https://picsum.photos/seed/exploitdb/150/50",
+      "hint": "exploit database"
+    },
+    "darkreading": {
+      "url": "https://picsum.photos/seed/darkreading/150/50",
+      "hint": "dark reading"
+    },
+    "cisa": {
+      "url": "https://picsum.photos/seed/cisa/150/50",
+      "hint": "government seal"
+    },
+    "danielmiessler": {
+      "url": "https://picsum.photos/seed/danielmiessler/150/50",
+      "hint": "tech blog"
+    },
+    "nullbyte": {
+      "url": "https://picsum.photos/seed/nullbyte/150/50",
+      "hint": "hacker tutorial"
+    }
+  },
+  "researchHubs": {
+    "mitre": {
+      "url": "https://picsum.photos/seed/mitre/150/50",
+      "hint": "tech framework"
+    },
+    "nist": {
+      "url": "https://picsum.photos/seed/nist/150/50",
+      "hint": "government building"
+    },
+    "cis": {
+      "url": "https://picsum.photos/seed/cis/150/50",
+      "hint": "security benchmark"
+    },
+    "owaspcheatsheet": {
+      "url": "https://picsum.photos/seed/owaspcheatsheet/150/50",
+      "hint": "security guide"
+    }
+  },
+  "projects": {
+    "chatbot": {
+      "url": "https://picsum.photos/seed/chatbot/400/300",
+      "hint": "ai chatbot"
+    },
+    "networkAnalyzer": {
+      "url": "https://picsum.photos/seed/networkanalyzer/400/300",
+      "hint": "network analysis"
+    },
+    "encryptionUtil": {
+      "url": "https://picsum.photos/seed/encryptionutil/400/300",
+      "hint": "file encryption"
+    }
+  },
+  "openGraph": {
+    "blogs": {
+      "url": "https://picsum.photos/seed/ogblogs/1200/630",
+      "hint": "cybersecurity blogs"
+    },
+    "main": {
+      "url": "https://picsum.photos/seed/ogmain/1200/630",
+      "hint": "cyber shield"
+    }
+  }
+}

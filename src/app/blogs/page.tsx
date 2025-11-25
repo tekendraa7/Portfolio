@@ -9,6 +9,7 @@ import { Badge } from '@/components/ui/badge';
 import { ExternalLink, Rss, MessageSquare } from 'lucide-react'; // Added MessageSquare
 import { cybersecurityBlogs, owaspTop10, owaspGeneralLink, researchHubs, communityFeeds, discordServers } from '@/data/blogsData'; // Added discordServers
 import { InfoCard } from '@/components/blogs/InfoCard';
+import imageData from '@/lib/placeholder-images.json';
 
 export const metadata: Metadata = {
   title: 'Cybersecurity Blogs & Resources - CyberShield Portfolio',
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
     description: 'Curated cybersecurity blogs, OWASP Top 10, research hubs, and community feeds.',
     images: [
       {
-        url: 'https://placehold.co/1200x630.png?text=Cybersecurity+Blogs',
+        url: imageData.openGraph.blogs.url,
         width: 1200,
         height: 630,
         alt: 'Cybersecurity Blogs & Resources',

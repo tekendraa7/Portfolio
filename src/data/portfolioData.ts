@@ -1,6 +1,8 @@
 
 import type { LucideIcon } from "lucide-react";
 import { Github, Linkedin, Mail, Smartphone, Laptop } from "lucide-react";
+import imageData from '@/lib/placeholder-images.json';
+
 
 export interface Skill {
   name: string;
@@ -47,8 +49,8 @@ export const projectsData: Project[] = [
     title: "AI-Powered Q&A Chatbot",
     description: "This very portfolio site features an AI chatbot capable of answering questions related to Linux, cybersecurity, and networking. Built with Next.js and Genkit AI.",
     technologies: ["Next.js", "React", "TypeScript", "Genkit AI", "Tailwind CSS"],
-    imageUrl: "https://placehold.co/400x300.png",
-    imageHint: "ai chatbot",
+    imageUrl: imageData.projects.chatbot.url,
+    imageHint: imageData.projects.chatbot.hint,
     repoUrl: "https://github.com/tekendraa7/Portfolio-CyberShield",
   },
   {
@@ -56,16 +58,16 @@ export const projectsData: Project[] = [
     title: "Network Traffic Analyzer",
     description: "A Python-based tool to capture and analyze network packets, identifying potential security threats and unusual patterns. (Conceptual Project)",
     technologies: ["Python", "Scapy", "Wireshark (concept)"],
-    imageUrl: "https://placehold.co/400x300.png",
-    imageHint: "network analysis",
+    imageUrl: imageData.projects.networkAnalyzer.url,
+    imageHint: imageData.projects.networkAnalyzer.hint,
   },
   {
     id: "3",
     title: "Secure File Encryption Utility",
     description: "A command-line utility for encrypting and decrypting files using AES-256, ensuring data confidentiality. (Conceptual Project)",
     technologies: ["Python", "Cryptography", "CLI"],
-    imageUrl: "https://placehold.co/400x300.png",
-    imageHint: "file encryption",
+    imageUrl: imageData.projects.encryptionUtil.url,
+    imageHint: imageData.projects.encryptionUtil.hint,
   },
 ];
 
@@ -118,7 +120,7 @@ export const recommendedBooks: Book[] = [
     title: "Networking All-in-One For Dummies",
     author: "Doug Lowe",
     description: "A comprehensive guide covering everything from basic network setup to virtualizaton and cloud computing.",
-    imageUrl: "https://placehold.co/200x300.png",
+    imageUrl: "https://picsum.photos/seed/book1/200/300",
     imageHint: "networking book",
     amazonLink: "#",
   },
@@ -127,7 +129,7 @@ export const recommendedBooks: Book[] = [
     title: "Cybersecurity For Dummies",
     author: "Joseph Steinberg",
     description: "Learn how to protect your personal and business information from cyber threats.",
-    imageUrl: "https://placehold.co/200x300.png",
+    imageUrl: "https://picsum.photos/seed/book2/200/300",
     imageHint: "cybersecurity book",
     amazonLink: "#",
   },
@@ -136,7 +138,7 @@ export const recommendedBooks: Book[] = [
     title: "The Linux Command Line: A Complete Introduction",
     author: "William Shotts",
     description: "Master the Linux command line with this in-depth guide, perfect for beginners and experienced users alike.",
-    imageUrl: "https://placehold.co/200x300.png",
+    imageUrl: "https://picsum.photos/seed/book3/200/300",
     imageHint: "linux book",
     amazonLink: "#",
   },
@@ -145,7 +147,7 @@ export const recommendedBooks: Book[] = [
     title: "Hacking: The Art of Exploitation",
     author: "Jon Erickson",
     description: "A classic book that delves into the technical details of hacking and exploit development.",
-    imageUrl: "https://placehold.co/200x300.png",
+    imageUrl: "https://picsum.photos/seed/book4/200/300",
     imageHint: "hacking book",
     amazonLink: "#",
   },
@@ -158,7 +160,7 @@ export const curatedBlogs: Blog[] = [
     snippet: "Learn essential tips and practices to protect your digital identity from common threats like phishing and malware...",
     url: "#", // Replace with actual URL
     category: "Cybersecurity",
-    imageUrl: "https://placehold.co/300x200.png",
+    imageUrl: "https://picsum.photos/seed/blog1/300/200",
     imageHint: "security article",
   },
   {
@@ -167,7 +169,7 @@ export const curatedBlogs: Blog[] = [
     snippet: "Getting started with Linux? These 10 commands will help you navigate the terminal like a pro...",
     url: "#", // Replace with actual URL
     category: "Linux",
-    imageUrl: "https://placehold.co/300x200.png",
+    imageUrl: "https://picsum.photos/seed/blog2/300/200",
     imageHint: "linux terminal",
   },
   {
@@ -176,7 +178,7 @@ export const curatedBlogs: Blog[] = [
     snippet: "A simple explanation of fundamental networking concepts that everyone should know...",
     url: "#", // Replace with actual URL
     category: "Networking",
-    imageUrl: "https://placehold.co/300x200.png",
+    imageUrl: "https://picsum.photos/seed/blog3/300/200",
     imageHint: "network diagram",
   },
   {
@@ -185,7 +187,7 @@ export const curatedBlogs: Blog[] = [
     snippet: "Discover why keeping your software updated is crucial for security and performance...",
     url: "#", // Replace with actual URL
     category: "Cybersecurity",
-    imageUrl: "https://placehold.co/300x200.png",
+    imageUrl: "https://picsum.photos/seed/blog4/300/200",
     imageHint: "software update",
   },
 ];
@@ -199,7 +201,7 @@ export const freeCourseSuggestions: Course[] = [
     url: "https://www.netacad.com/courses/cybersecurity/introduction-cybersecurity",
     category: "Cybersecurity",
     isFree: true,
-    imageUrl: "https://placehold.co/300x200.png",
+    imageUrl: "https://picsum.photos/seed/course1/300/200",
     imageHint: "cybersecurity course",
   },
   {
@@ -210,7 +212,7 @@ export const freeCourseSuggestions: Course[] = [
     url: "https://www.cybrary.it/", // General link, specific course may vary
     category: "Cybersecurity",
     isFree: true, // Often free tiers available
-    imageUrl: "https://placehold.co/300x200.png",
+    imageUrl: "https://picsum.photos/seed/course2/300/200",
     imageHint: "ethical hacking course",
   },
   {
@@ -221,7 +223,7 @@ export const freeCourseSuggestions: Course[] = [
     url: "https://learn.microsoft.com/en-us/training/browse/?terms=networking%20essentials",
     category: "Networking",
     isFree: true,
-    imageUrl: "https://placehold.co/300x200.png",
+    imageUrl: "https://picsum.photos/seed/course3/300/200",
     imageHint: "networking course",
   },
   {
@@ -232,7 +234,7 @@ export const freeCourseSuggestions: Course[] = [
     url: "https://www.netacad.com/courses/os-it/ndg-linux-essentials",
     category: "Linux",
     isFree: true,
-    imageUrl: "https://placehold.co/300x200.png", // Standardized to placeholder
+    imageUrl: "https://picsum.photos/seed/course4/300/200",
     imageHint: "linux course",
   },
 ];
