@@ -3,7 +3,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { ShieldCheck, Menu, X, MapPinned, Rss as BlogsIcon, TrendingUp } from 'lucide-react'; // Added BlogsIcon
+import { ShieldCheck, Menu, X, MapPinned, Rss as BlogsIcon, TrendingUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from '@/components/ui/sheet';
 import { cn } from '@/lib/utils';
@@ -14,7 +14,7 @@ const navItems = [
   { href: '/', label: 'Home' },
   { href: '/portfolio', label: 'Portfolio' },
   { href: '/qa', label: 'Q&A' },
-  { href: '/blogs', label: 'Blogs' },
+  { href: '/blogs', label: 'Research' },
   { href: '/roadmap', label: 'Roadmap' },
   { href: '/market', label: 'Market' },
 ];
@@ -36,7 +36,7 @@ const NavLink: React.FC<NavLinkProps> = ({ href, label, onClick, className }) =>
       onClick={onClick}
       className={cn(
         "text-sm font-medium transition-colors hover:text-primary",
-        isActive ? "text-primary font-semibold" : "text-foreground/80",
+        isActive ? "text-primary font-semibold" : "text-muted-foreground",
         className
       )}
     >
@@ -55,17 +55,17 @@ export function Header() {
   }, []);
 
 
-  if (!mounted) { // Prevents hydration mismatch for theme toggle and mobile menu
+  if (!mounted) { 
     return (
-      <header className="fixed top-0 left-0 right-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      <header className="fixed top-0 left-0 right-0 z-50 w-full border-b bg-background/95 backdrop-blur-sm">
         <div className="container mx-auto flex h-16 items-center justify-between px-4">
           <Link href="/" className="flex items-center gap-2">
             <ShieldCheck className="h-7 w-7 text-primary" />
-            <span className="text-xl font-bold text-primary">CyberShield</span>
+            <span className="text-xl font-bold text-foreground">CyberShield</span>
           </Link>
           <div className="flex items-center gap-2">
-             <div className="h-9 w-9 rounded-md bg-muted/50 animate-pulse" /> {/* Placeholder for ThemeToggle */}
-             <div className="md:hidden h-10 w-10 bg-muted/50 animate-pulse rounded-md" /> {/* Placeholder for Menu button */}
+             <div className="h-9 w-9 rounded-md bg-muted/50 animate-pulse" />
+             <div className="md:hidden h-10 w-10 bg-muted/50 animate-pulse rounded-md" />
           </div>
         </div>
       </header>
@@ -74,11 +74,11 @@ export function Header() {
 
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="fixed top-0 left-0 right-0 z-50 w-full border-b bg-background/90 backdrop-blur-sm">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         <Link href="/" className="flex items-center gap-2">
           <ShieldCheck className="h-7 w-7 text-primary" />
-          <span className="text-xl font-bold text-primary">CyberShield</span>
+          <span className="text-xl font-bold text-foreground">CyberShield</span>
         </Link>
 
         <nav className="hidden md:flex items-center space-x-6">
@@ -102,7 +102,7 @@ export function Header() {
                   <div className="flex justify-between items-center mb-4">
                     <Link href="/" className="flex items-center gap-2" onClick={() => setIsMobileMenuOpen(false)}>
                       <ShieldCheck className="h-7 w-7 text-primary" />
-                      <span className="text-xl font-bold text-primary">CyberShield</span>
+                      <span className="text-xl font-bold text-foreground">CyberShield</span>
                     </Link>
                     <SheetClose asChild>
                        <Button variant="ghost" size="icon" onClick={() => setIsMobileMenuOpen(false)}>
@@ -118,7 +118,7 @@ export function Header() {
                         href={item.href}
                         label={item.label}
                         onClick={() => setIsMobileMenuOpen(false)}
-                        className="text-lg py-3 px-2 rounded-md hover:bg-accent/50" // Larger clickable area for mobile
+                        className="text-lg py-3 px-2 rounded-md hover:bg-secondary"
                       />
                     ))}
                   </nav>

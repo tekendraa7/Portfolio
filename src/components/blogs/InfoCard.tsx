@@ -34,28 +34,28 @@ export function InfoCard({
   id,
 }: InfoCardProps) {
   return (
-    <Card className="flex flex-col h-full overflow-hidden shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300">
+    <Card className="flex flex-col h-full overflow-hidden shadow-sm hover:shadow-lg hover:border-primary/50 hover:scale-[1.02] transition-all duration-300">
       <CardHeader className="pb-3">
         <div className="flex items-start gap-4">
           {logoUrl && (
-            <div className="relative w-16 h-16 sm:w-20 sm:h-20 shrink-0 bg-muted/50 rounded-md overflow-hidden flex items-center justify-center">
+            <div className="relative w-16 h-16 sm:w-20 sm:h-20 shrink-0 bg-secondary/50 rounded-md overflow-hidden flex items-center justify-center p-2">
               <Image
                 src={logoUrl}
                 alt={`${title} logo`}
                 width={80}
                 height={80}
-                objectFit="contain"
+                style={{ objectFit: 'contain' }}
                 data-ai-hint={imageHint || "logo"}
               />
             </div>
           )}
           {!logoUrl && Icon && (
-             <div className="p-3 bg-accent/20 rounded-md">
-                <Icon className="h-8 w-8 text-accent" />
+             <div className="p-3 bg-primary/10 rounded-md">
+                <Icon className="h-8 w-8 text-primary" />
              </div>
           )}
           <div className="flex-grow">
-            <CardTitle className="text-lg text-primary leading-tight">{title}</CardTitle>
+            <CardTitle className="text-lg text-foreground leading-tight">{title}</CardTitle>
             {category && <Badge variant="secondary" className="mt-1 text-xs">{category}</Badge>}
           </div>
         </div>
@@ -73,7 +73,7 @@ export function InfoCard({
         )}
       </CardContent>
       <CardFooter className="border-t pt-4">
-        <Button asChild variant="link" size="sm" className="w-full justify-start p-0 text-accent hover:underline">
+        <Button asChild variant="link" size="sm" className="w-full justify-start p-0 text-primary hover:underline">
           <Link href={url} target="_blank" rel="noopener noreferrer">
             {linkText} <ExternalLink className="ml-1.5 h-3.5 w-3.5" />
           </Link>

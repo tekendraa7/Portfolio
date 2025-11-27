@@ -1,79 +1,64 @@
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowRight, BotMessageSquareIcon, BriefcaseIcon, ShieldCheck, Newspaper, Github, Linkedin, Download } from "lucide-react";
+import { ArrowRight, BotMessageSquareIcon, BriefcaseIcon, ShieldCheck, Newspaper, Github, Linkedin, Download, BookOpen } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { aboutData, contactLinks } from "@/data/portfolioData"; // Import portfolio data
+import { aboutData, contactLinks } from "@/data/portfolioData";
 
 export default function Home() {
   const socialIconsToShow = ['GitHub', 'LinkedIn'];
   const filteredContactLinks = contactLinks.filter(link => socialIconsToShow.includes(link.name));
 
   return (
-    <div className="space-y-16">
+    <div className="space-y-16 container mx-auto px-4 py-8">
       {/* Hero Section */}
-      <section className="text-center py-12 md:py-20 bg-secondary/50 rounded-lg shadow-sm">
-        <div className="container mx-auto px-4">
-          <ShieldCheck className="h-20 w-20 text-primary mx-auto mb-6" />
-          <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight text-primary mb-4">
-            Welcome to CyberShield Portfolio
-          </h1>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
-            Tekendra Bhandari - Computer Engineering Student.
-            Exploring the realms of Cybersecurity, Linux, and Networking with AI-powered insights.
-          </p>
-          <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
-            <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground">
-              <Link href="/portfolio">
-                Explore My Work <BriefcaseIcon className="ml-2 h-5 w-5" />
-              </Link>
-            </Button>
-            <Button asChild variant="outline" size="lg" className="border-primary text-primary hover:bg-primary/10">
-              <Link href="/qa">
-                Ask AI Anything <BotMessageSquareIcon className="ml-2 h-5 w-5" />
-              </Link>
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* New About Me Section */}
-      <section className="container mx-auto px-4 py-12">
-        <div className="bg-gradient-to-br from-card to-background p-6 md:p-10 rounded-xl shadow-xl border border-border">
-          <div className="grid md:grid-cols-12 gap-8 md:gap-12 items-center">
-            {/* Left Side: Image */}
-            <div className="md:col-span-4 flex justify-center">
-              <div className="relative group">
-                <Image
-                  src={aboutData.profileImageUrl || "https://placehold.co/256x256.png"}
+      <section className="relative text-center py-20 md:py-28 overflow-hidden rounded-xl bg-gradient-to-br from-primary/10 to-accent/10 border border-border">
+          <div className="absolute -top-1/2 -left-1/2 w-[200%] h-[200%] bg-[radial-gradient(circle_at_center,_rgba(var(--primary-rgb),0.08)_0%,_transparent_40%)] -z-10 animate-[spin_20s_linear_infinite]"></div>
+          
+          <div className="container mx-auto px-4 relative z-10">
+              <Image
+                  src={aboutData.profileImageUrl || "https://placehold.co/128x128.png"}
                   alt={aboutData.name || "Profile Picture"}
-                  width={256}
-                  height={256}
+                  width={128}
+                  height={128}
                   priority
-                  className="rounded-full shadow-lg border-4 border-primary/70 object-cover
-                             w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64
-                             group-hover:scale-105 transition-transform duration-300 ease-in-out"
+                  className="rounded-full shadow-lg border-4 border-background/80 object-cover mx-auto mb-6"
                   data-ai-hint={aboutData.profileImageHint || "profile photo"}
                 />
-              </div>
-            </div>
-
-            {/* Right Side: Text Content */}
-            <div className="md:col-span-8 text-center md:text-left">
-              <h2 className="text-3xl sm:text-4xl font-bold text-primary mb-2">
-                Hi, I’m {aboutData.name || "Tekendra Bhandari"} 👋
-              </h2>
-              <p className="text-md sm:text-lg text-accent font-medium mb-4">
-                Cybersecurity Enthusiast | Frontline Explorer in Ethical Hacking | Building @CyberShield
+              <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-foreground mb-4 text-glow">
+                Tekendra Bhandari
+              </h1>
+              <p className="text-lg md:text-xl text-primary font-semibold max-w-3xl mx-auto mb-8">
+                 Cyber Researcher & Developer <br />
+                 <span className="text-muted-foreground font-normal text-base">Cybersecurity | Linux | AI & Stock Market Analysis</span>
               </p>
-              <p className="text-muted-foreground mb-6 text-sm sm:text-base max-w-2xl mx-auto md:mx-0">
+              <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
+                <Button asChild size="lg">
+                  <Link href="/portfolio">
+                    Explore Portfolio <BriefcaseIcon className="ml-2 h-5 w-5" />
+                  </Link>
+                </Button>
+                <Button asChild variant="outline" size="lg">
+                  <Link href="/blogs">
+                    View Research <BookOpen className="ml-2 h-5 w-5" />
+                  </Link>
+                </Button>
+              </div>
+          </div>
+      </section>
+
+      {/* About Me Section - Simplified */}
+       <section className="py-12">
+        <div className="text-center">
+            <h2 className="text-3xl font-bold text-foreground mb-4">About Me</h2>
+            <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
                 A passionate Computer Engineering student diving deep into the world of cybersecurity, Linux, and networking.
                 Dedicated to leveraging technology to build secure and innovative solutions for a safer digital tomorrow.
-              </p>
-              <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4">
-                <Button asChild variant="outline" className="border-accent text-accent hover:bg-accent/10 hover:text-accent-foreground">
-                  <a href="/tekendra_bhandari_cv.pdf" download> {/* Replace with actual CV path */}
+            </p>
+            <div className="flex items-center justify-center gap-4">
+                 <Button asChild variant="outline">
+                  <a href="/tekendra_bhandari_cv.pdf" download>
                     Download CV <Download className="ml-2 h-4 w-4" />
                   </a>
                 </Button>
@@ -85,64 +70,63 @@ export default function Home() {
                           target="_blank"
                           rel="noopener noreferrer"
                           aria-label={link.name}
-                          className="text-muted-foreground hover:text-accent hover:scale-110 transition-all duration-200"
+                          className="text-muted-foreground hover:text-primary transition-all duration-200"
                         >
                           <link.icon className="h-6 w-6" />
                         </Link>
                       ))}
                 </div>
               </div>
-            </div>
-          </div>
         </div>
       </section>
 
+
       {/* Overview Section */}
       <section className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center text-primary mb-12">What You'll Find Here</h2>
+        <h2 className="text-3xl font-bold text-center text-foreground mb-12">What You'll Find Here</h2>
         <div className="grid md:grid-cols-3 gap-8">
-          <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300">
+          <Card className="shadow-sm hover:shadow-lg hover:border-primary/50 transition-all duration-300">
             <CardHeader className="items-center">
-              <BriefcaseIcon className="h-12 w-12 text-accent mb-2" />
+              <BriefcaseIcon className="h-12 w-12 text-primary mb-2" />
               <CardTitle className="text-xl text-center">My Portfolio</CardTitle>
             </CardHeader>
             <CardContent>
               <p className="text-muted-foreground text-center">
                 Discover my projects, skills, and journey in computer engineering.
               </p>
-              <Link href="/portfolio" className="mt-4 text-accent hover:underline flex items-center justify-center">
+              <Link href="/portfolio" className="mt-4 text-primary hover:underline flex items-center justify-center">
                 View Portfolio <ArrowRight className="ml-1 h-4 w-4" />
               </Link>
             </CardContent>
           </Card>
 
-          <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300">
+          <Card className="shadow-sm hover:shadow-lg hover:border-primary/50 transition-all duration-300">
             <CardHeader className="items-center">
-              <BotMessageSquareIcon className="h-12 w-12 text-accent mb-2" />
+              <BotMessageSquareIcon className="h-12 w-12 text-primary mb-2" />
               <CardTitle className="text-xl text-center">AI Q&A Chatbot</CardTitle>
             </CardHeader>
             <CardContent>
               <p className="text-muted-foreground text-center">
                 Interact with an AI to get answers on Linux, Cybersecurity, and Networking.
               </p>
-              <Link href="/qa" className="mt-4 text-accent hover:underline flex items-center justify-center">
+              <Link href="/qa" className="mt-4 text-primary hover:underline flex items-center justify-center">
                 Try the Chatbot <ArrowRight className="ml-1 h-4 w-4" />
               </Link>
             </CardContent>
           </Card>
 
-          <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300">
+          <Card className="shadow-sm hover:shadow-lg hover:border-primary/50 transition-all duration-300">
             <CardHeader className="items-center">
-              <Newspaper className="h-12 w-12 text-accent mb-2" />
-              <CardTitle className="text-xl text-center">Blogs & Resources</CardTitle>
+              <Newspaper className="h-12 w-12 text-primary mb-2" />
+              <CardTitle className="text-xl text-center">Blogs & Research</CardTitle>
             </CardHeader>
             <CardContent>
               <div>
                 <p className="text-muted-foreground text-center">
-                  Curated cybersecurity blogs, OWASP Top 10, research hubs, and community feeds.
+                  Curated cybersecurity blogs, market analysis, and research papers.
                 </p>
-                <Link href="/blogs" className="mt-4 text-accent hover:underline flex items-center justify-center">
-                  Explore Blogs <ArrowRight className="ml-1 h-4 w-4" />
+                <Link href="/blogs" className="mt-4 text-primary hover:underline flex items-center justify-center">
+                  Explore Posts <ArrowRight className="ml-1 h-4 w-4" />
                 </Link>
               </div>
             </CardContent>
@@ -150,22 +134,6 @@ export default function Home() {
         </div>
       </section>
       
-      {/* Featured Image Section (Optional) */}
-      <section className="container mx-auto px-4">
-         <div className="relative w-full h-64 md:h-96 rounded-lg overflow-hidden shadow-xl">
-            <Image
-              src="https://i.imgur.com/NGLz3G0.gif"
-              alt="Cybersecurity conceptual image"
-              layout="fill"
-              objectFit="cover"
-              data-ai-hint="cybersecurity network"
-              className="opacity-80"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-8">
-              <h3 className="text-3xl font-semibold text-white">Secure. Learn. Innovate.</h3>
-            </div>
-          </div>
-      </section>
     </div>
   );
 }

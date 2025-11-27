@@ -1,19 +1,18 @@
 
 import type { Metadata } from 'next';
-import { Share_Tech_Mono } from 'next/font/google';
+import { Inter } from 'next/font/google'; // Changed to Inter
 import './globals.css';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { Toaster } from "@/components/ui/toaster";
 import { cn } from '@/lib/utils';
 import { ThemeProvider } from '@/components/layout/ThemeProvider';
-import { FloatingChatButton } from '@/components/chat/FloatingChatButton'; // Import the chat button
+import { FloatingChatButton } from '@/components/chat/FloatingChatButton';
 import imageData from '@/lib/placeholder-images.json';
 
-const shareTechMono = Share_Tech_Mono({
-  variable: '--font-share-tech-mono',
+const inter = Inter({
+  variable: '--font-sans', // Use sans-serif variable
   subsets: ['latin'],
-  weight: ['400'],
   display: 'swap',
 });
 
@@ -49,10 +48,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="h-full" suppressHydrationWarning>
-      <body className={cn(shareTechMono.variable, "font-mono h-full antialiased flex flex-col")}>
+      <body className={cn(inter.variable, "font-sans h-full flex flex-col")}> {/* Changed font class */}
         <ThemeProvider
             attribute="class"
-            defaultTheme="dark" 
+            defaultTheme="light" // Changed default to light
             enableSystem
             disableTransitionOnChange
         >

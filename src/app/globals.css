@@ -3,112 +3,81 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Set the default font family using the CSS variable */
-body {
-  font-family: var(--font-share-tech-mono), monospace; /* Use the Share Tech Mono variable */
-}
-
 @layer base {
   :root {
-    /* Cyberpunk Light Mode (Conceptual - Cyberpunk is typically dark) */
-    --background: 210 0% 95%; /* Very light gray, almost white */
-    --foreground: 0 0% 6%; /* Deep black for text */
+    --background: 210 20% 98%; /* Almost white */
+    --foreground: 224 71% 4%; /* Dark Blue-Black */
 
-    --muted: 210 0% 88%; /* Lighter gray */
-    --muted-foreground: 0 0% 25%; /* Darker gray */
+    --muted: 210 20% 88%;
+    --muted-foreground: 215 28% 45%;
 
-    --popover: 210 0% 100%; /* White */
-    --popover-foreground: 0 0% 6%;
+    --popover: 210 20% 100%;
+    --popover-foreground: 224 71% 4%;
 
-    --card: 210 0% 100%; /* White */
-    --card-foreground: 0 0% 6%;
+    --card: 210 40% 100%; /* White */
+    --card-foreground: 224 71% 4%;
 
-    --border: 172 100% 38%; /* Neon Cyan for subtle borders */
-    --input: 172 100% 38%; 
+    --border: 210 20% 85%;
+    --input: 210 20% 75%;
 
-    --primary: 172 100% 48%; /* Neon Cyan: #00f5d4 */
-    --primary-foreground: 0 0% 4%; /* Deep Black for text on primary */
+    --primary: 210 100% 56%; /* Bright Blue: #4DA3FF */
+    --primary-foreground: 210 20% 98%;
 
-    --secondary: 210 0% 80%; /* Lighter gray for secondary elements */
-    --secondary-foreground: 0 0% 10%; /* Dark text on secondary */
+    --secondary: 210 20% 94%;
+    --secondary-foreground: 224 71% 4%;
 
-    --accent: 332 100% 50%; /* Hot Pink: #ff006e */
-    --accent-foreground: 0 0% 95%; /* Light text on accent */
+    --accent: 210 100% 65%; /* Lighter Blue */
+    --accent-foreground: 224 71% 4%;
 
-    --destructive: 0 80% 55%; /* Vivid Red */
+    --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
 
-    --ring: 172 100% 58%; /* Brighter Neon Cyan for rings */
+    --ring: 210 100% 56%;
 
-    --radius: 0.3rem; /* Slightly sharper radius for cyberpunk */
+    --radius: 0.75rem;
 
-    /* Chart colors can remain or be adapted to neon palette */
-    --chart-1: 172 100% 48%; /* Neon Cyan */
-    --chart-2: 332 100% 50%; /* Hot Pink */
-    --chart-3: 220 100% 61%; /* Electric Blue */
-    --chart-4: 99 100% 87%;  /* Bright Lime */
-    --chart-5: 270 70% 65%; /* A purple to complement */
-
-    --sidebar-background: 210 0% 92%; 
-    --sidebar-foreground: 0 0% 10%;
-    --sidebar-primary: 172 100% 48%;
-    --sidebar-primary-foreground: 0 0% 4%;
-    --sidebar-accent: 332 100% 50%;
-    --sidebar-accent-foreground: 0 0% 95%;
-    --sidebar-border: 172 100% 38%;
-    --sidebar-ring: 172 100% 58%;
-
-    /* Glow colors */
-    --glow-cyan: 0 0 10px hsl(var(--primary)), 0 0 20px hsl(var(--primary));
-    --glow-pink: 0 0 10px hsl(var(--accent)), 0 0 20px hsl(var(--accent));
-    --glow-blue: 0 0 10px hsl(220, 100%, 61%), 0 0 20px hsl(220, 100%, 61%);
+    --chart-1: 210 100% 56%; /* Bright Blue */
+    --chart-2: 190 100% 45%; /* Cyan-Blue */
+    --chart-3: 230 90% 65%; /* Indigo */
+    --chart-4: 210 60% 80%; /* Light Blue */
+    --chart-5: 220 30% 60%; /* Muted Blue */
   }
 
   .dark {
-    /* Cyberpunk Dark Mode */
-    --background: 0 0% 4%; /* Deep Black: #090909 */
-    --foreground: 0 0% 95%; /* Light Text: #F1F1F1 */
+    --background: 224 71% 4%; /* Dark Blue-Black */
+    --foreground: 210 20% 98%;
 
-    --muted: 0 0% 10%; /* Slightly lighter black/dark gray */
-    --muted-foreground: 0 0% 60%; /* Lighter gray for muted text */
+    --muted: 220 40% 12%;
+    --muted-foreground: 215 28% 65%;
+    
+    --popover: 224 71% 6%;
+    --popover-foreground: 210 20% 98%;
 
-    --popover: 0 0% 8%; /* Dark popover background */
-    --popover-foreground: 0 0% 95%;
+    --card: 222 84% 9%; /* Slightly lighter dark blue */
+    --card-foreground: 210 20% 98%;
+    
+    --border: 215 28% 17%;
+    --input: 215 28% 17%;
 
-    --card: 0 0% 7%; /* Dark card background */
-    --card-foreground: 0 0% 95%;
+    --primary: 210 100% 56%; /* Bright Blue */
+    --primary-foreground: 210 20% 98%;
 
-    --border: 172 100% 38%; /* Neon Cyan for borders */
-    --input: 172 100% 38%; /* Neon Cyan for input borders */
+    --secondary: 215 28% 17%;
+    --secondary-foreground: 210 20% 98%;
 
-    --primary: 172 100% 48%; /* Neon Cyan: #00f5d4 */
-    --primary-foreground: 0 0% 4%; /* Deep Black for text on primary */
+    --accent: 210 100% 70%;
+    --accent-foreground: 224 71% 4%;
 
-    --secondary: 0 0% 12%; /* Dark gray for secondary elements */
-    --secondary-foreground: 172 100% 70%; /* Lighter Neon Cyan text */
-
-    --accent: 332 100% 50%; /* Hot Pink: #ff006e */
-    --accent-foreground: 0 0% 95%; /* Light text on accent */
-
-    --destructive: 0 80% 55%; /* Vivid Red */
+    --destructive: 0 63% 31%;
     --destructive-foreground: 0 0% 98%;
 
-    --ring: 172 100% 58%; /* Brighter Neon Cyan for rings */
-    
-    --chart-1: 172 100% 48%; 
-    --chart-2: 332 100% 50%; 
-    --chart-3: 220 100% 61%; 
-    --chart-4: 99 100% 70%;  /* Adjusted Bright Lime for dark mode contrast */
-    --chart-5: 270 70% 65%;
+    --ring: 210 100% 56%;
 
-    --sidebar-background: 0 0% 6%; 
-    --sidebar-foreground: 0 0% 90%;
-    --sidebar-primary: 172 100% 48%;
-    --sidebar-primary-foreground: 0 0% 4%;
-    --sidebar-accent: 332 100% 50%;
-    --sidebar-accent-foreground: 0 0% 95%;
-    --sidebar-border: 172 100% 38%;
-    --sidebar-ring: 172 100% 58%;
+    --chart-1: 210 100% 56%;
+    --chart-2: 190 100% 45%;
+    --chart-3: 230 90% 65%;
+    --chart-4: 210 60% 80%;
+    --chart-5: 220 30% 60%;
   }
 }
 
@@ -118,32 +87,18 @@ body {
   }
   body {
     @apply bg-background text-foreground;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 }
 
-/* Custom button hover glow for cyberpunk theme */
+/* Glassmorphism card effect */
 @layer components {
-  .btn-cyberpunk-hover-glow-primary {
-    @apply transition-all duration-300;
-  }
-  .btn-cyberpunk-hover-glow-primary:hover {
-    box-shadow: 0 0 8px hsl(var(--primary)), 0 0 16px hsl(var(--primary)), 0 0 24px hsl(var(--primary));
-    transform: scale(1.05);
-  }
-  
-  .btn-cyberpunk-hover-glow-accent {
-    @apply transition-all duration-300;
-  }
-  .btn-cyberpunk-hover-glow-accent:hover {
-    box-shadow: 0 0 8px hsl(var(--accent)), 0 0 16px hsl(var(--accent)), 0 0 24px hsl(var(--accent));
-    transform: scale(1.05);
+  .card-glass {
+    @apply bg-card/60 backdrop-blur-lg border border-white/20;
   }
 
-  /* General glow for other elements if needed */
-  .cyber-glow-primary {
-    box-shadow: 0 0 5px hsl(var(--primary)), 0 0 10px hsl(var(--primary));
-  }
-  .cyber-glow-accent {
-    box-shadow: 0 0 5px hsl(var(--accent)), 0 0 10px hsl(var(--accent));
+  .text-glow {
+    text-shadow: 0 0 8px hsl(var(--primary) / 0.7);
   }
 }

@@ -5,7 +5,7 @@ import { useState, useRef, useEffect, FormEvent } from "react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { Avatar } from "@/components/ui/avatar";
 import { Send, User, Bot, Loader2, MessageSquare } from "lucide-react";
 import { sendChatMessage } from "@/lib/actions";
 import { cn } from "@/lib/utils";
@@ -51,7 +51,6 @@ export function ChatWindow() {
     setInputValue("");
     setIsLoading(true);
 
-    // Prepare history for the action
     const historyForAction = messages.map(msg => ({ id: msg.id, sender: msg.sender, text: msg.text }));
     
     try {
@@ -86,10 +85,10 @@ export function ChatWindow() {
   };
 
   return (
-    <div className="flex flex-col h-[60vh] sm:h-[70vh] max-h-[500px] sm:max-h-[600px] w-full bg-card text-card-foreground rounded-lg shadow-xl border border-border">
-      <div className="p-4 border-b border-border flex items-center gap-2">
+    <div className="flex flex-col h-[60vh] sm:h-[70vh] max-h-[500px] sm:max-h-[600px] w-full bg-transparent text-card-foreground rounded-lg">
+      <div className="p-4 border-b flex items-center gap-2">
         <Bot className="h-6 w-6 text-primary" />
-        <h3 className="text-lg font-semibold text-primary">Cyber Assistant</h3>
+        <h3 className="text-lg font-semibold text-foreground">Cyber Assistant</h3>
       </div>
       <ScrollArea className="flex-grow p-4 space-y-4" ref={scrollAreaRef}>
         {messages.length === 0 && (
@@ -107,8 +106,8 @@ export function ChatWindow() {
             )}
           >
             {message.sender === "ai" && (
-              <Avatar className="h-8 w-8 bg-accent/20 p-1.5 rounded-full">
-                <Bot className="h-full w-full text-accent"/>
+              <Avatar className="h-8 w-8 bg-secondary p-1.5 rounded-full">
+                <Bot className="h-full w-full text-primary"/>
               </Avatar>
             )}
             <div
@@ -133,8 +132,8 @@ export function ChatWindow() {
         ))}
         {isLoading && (
           <div className="flex items-center justify-start gap-2 mb-4">
-            <Avatar className="h-8 w-8 bg-accent/20 p-1.5 rounded-full">
-              <Bot className="h-full w-full text-accent"/>
+            <Avatar className="h-8 w-8 bg-secondary p-1.5 rounded-full">
+              <Bot className="h-full w-full text-primary"/>
             </Avatar>
             <div className="max-w-[70%] rounded-lg px-4 py-3 bg-secondary text-secondary-foreground shadow-md">
               <Loader2 className="h-5 w-5 animate-spin text-muted-foreground" />
@@ -142,13 +141,13 @@ export function ChatWindow() {
           </div>
         )}
       </ScrollArea>
-      <form onSubmit={handleSubmit} className="border-t border-border p-3 flex items-center gap-2 bg-background/70 rounded-b-lg">
+      <form onSubmit={handleSubmit} className="border-t p-3 flex items-center gap-2 bg-background/70 rounded-b-lg">
         <Input
           type="text"
           placeholder="Type your message..."
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
-          className="flex-grow bg-background/50 focus:ring-accent focus:border-accent"
+          className="flex-grow bg-background/50 focus:ring-primary focus:border-primary"
           disabled={isLoading}
           autoComplete="off"
         />
@@ -156,7 +155,7 @@ export function ChatWindow() {
             type="submit" 
             disabled={isLoading || !inputValue.trim()} 
             size="icon"
-            className="bg-accent hover:bg-accent/90 text-accent-foreground rounded-full w-10 h-10 btn-cyberpunk-hover-glow-accent"
+            className="rounded-full w-10 h-10"
             aria-label="Send message"
         >
           <Send className="h-5 w-5" />

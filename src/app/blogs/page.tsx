@@ -6,23 +6,23 @@ import { SectionTitle } from '@/components/ui/SectionTitle';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { ExternalLink, Rss, MessageSquare } from 'lucide-react'; // Added MessageSquare
-import { cybersecurityBlogs, owaspTop10, owaspGeneralLink, researchHubs, communityFeeds, discordServers } from '@/data/blogsData'; // Added discordServers
+import { ExternalLink, Rss, MessageSquare } from 'lucide-react';
+import { cybersecurityBlogs, owaspTop10, owaspGeneralLink, researchHubs, communityFeeds, discordServers } from '@/data/blogsData';
 import { InfoCard } from '@/components/blogs/InfoCard';
 import imageData from '@/lib/placeholder-images.json';
 
 export const metadata: Metadata = {
-  title: 'Cybersecurity Blogs & Resources - CyberShield Portfolio',
+  title: 'Cybersecurity Research - CyberShield Portfolio',
   description: 'Stay updated with the latest exploits, research, OWASP Top 10, and expert insights in cybersecurity.',
   openGraph: {
-    title: 'Cybersecurity Blogs & Resources - CyberShield Portfolio',
+    title: 'Cybersecurity Research - CyberShield Portfolio',
     description: 'Curated cybersecurity blogs, OWASP Top 10, research hubs, and community feeds.',
     images: [
       {
         url: imageData.openGraph.blogs.url,
         width: 1200,
         height: 630,
-        alt: 'Cybersecurity Blogs & Resources',
+        alt: 'Cybersecurity Research',
       },
     ],
   },
@@ -32,17 +32,17 @@ export default function BlogsPage() {
   return (
     <div className="space-y-16 container mx-auto px-4 py-8">
       <header className="text-center space-y-4">
-        <h1 className="text-4xl md:text-5xl font-extrabold text-primary">
-          📰 Top Cybersecurity Blogs & Knowledge Hub
+        <h1 className="text-4xl md:text-5xl font-extrabold text-foreground text-glow">
+          Cybersecurity Research & Knowledge Hub
         </h1>
         <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
-          Stay updated with the latest exploits, research, OWASP Top 10, and expert insights.
+          A curated collection of top-tier blogs, frameworks, and community discussions.
         </p>
       </header>
 
       {/* Section 1: World-Class Cybersecurity Blogs */}
       <section>
-        <SectionTitle className="md:text-left">World-Class Cybersecurity Blogs</SectionTitle>
+        <SectionTitle>World-Class Cybersecurity Blogs</SectionTitle>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {cybersecurityBlogs.map((blog) => (
             <InfoCard
@@ -63,11 +63,10 @@ export default function BlogsPage() {
 
       {/* Section 2: OWASP Top 10 */}
       <section>
-        <SectionTitle className="md:text-left">🛡️ OWASP Top 10 - 2021</SectionTitle>
+        <SectionTitle>🛡️ OWASP Top 10 - 2021</SectionTitle>
         <p className="mb-6 text-muted-foreground md:text-left text-center">
-          The OWASP Top 10 is a standard awareness document for developers and web application security.
-          It represents a broad consensus about the most critical security risks to web applications.
-          <Button variant="link" asChild className="p-1 ml-1 text-accent">
+          The OWASP Top 10 is a standard awareness document for developers and web application security, representing a broad consensus about the most critical security risks.
+          <Button variant="link" asChild className="p-1 ml-1 text-primary">
             <Link href={owaspGeneralLink} target="_blank" rel="noopener noreferrer">
                Learn more <ExternalLink className="ml-1 h-4 w-4" />
             </Link>
@@ -75,11 +74,11 @@ export default function BlogsPage() {
         </p>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {owaspTop10.map((item) => (
-            <Card key={item.id} className="shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col">
+            <Card key={item.id} className="shadow-sm hover:shadow-lg transition-shadow duration-300 flex flex-col hover:border-primary/50">
               <CardHeader>
                 <div className="flex items-center gap-3 mb-2">
                   {item.icon && <item.icon className="h-8 w-8 text-destructive" />}
-                  <CardTitle className="text-xl text-destructive">{item.code}: {item.title}</CardTitle>
+                  <CardTitle className="text-xl text-foreground">{item.code}: {item.title}</CardTitle>
                 </div>
                 <CardDescription className="text-sm text-muted-foreground flex-grow min-h-[60px]">{item.explanation}</CardDescription>
               </CardHeader>
@@ -99,7 +98,7 @@ export default function BlogsPage() {
 
       {/* Section 3: Research & Framework Hubs */}
       <section>
-        <SectionTitle className="md:text-left">📚 Research & Framework Hubs</SectionTitle>
+        <SectionTitle>Research & Framework Hubs</SectionTitle>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {researchHubs.map((hub) => (
             <InfoCard
@@ -120,7 +119,7 @@ export default function BlogsPage() {
       
       {/* Section 4: Cybersecurity Discord Servers */}
       <section>
-        <SectionTitle className="md:text-left">💬 Join the Community: Top Discord Servers</SectionTitle>
+        <SectionTitle>Join the Community: Top Discord Servers</SectionTitle>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {discordServers.map((server) => (
             <InfoCard
@@ -129,10 +128,10 @@ export default function BlogsPage() {
               title={server.name}
               description={server.description}
               url={server.url}
-              icon={server.icon} // Using MessageSquare or similar
+              icon={server.icon}
               category={server.category}
               linkText="Join Server"
-              imageHint="discord community" // Generic hint for Discord servers
+              imageHint="discord community"
             />
           ))}
         </div>
@@ -140,19 +139,19 @@ export default function BlogsPage() {
 
       {/* Section 5: Community-Powered News Feeds */}
       <section>
-        <SectionTitle className="md:text-left">🌐 Community-Powered News Feeds</SectionTitle>
+        <SectionTitle>Community-Powered News Feeds</SectionTitle>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {communityFeeds.map((feed) => (
-            <Card key={feed.id} className="shadow-md hover:shadow-lg transition-shadow duration-300">
+            <Card key={feed.id} className="shadow-sm hover:shadow-lg transition-shadow duration-300 hover:border-primary/50">
               <CardHeader className="flex-row items-center justify-between space-y-0 pb-2">
-                <CardTitle className="text-lg font-medium text-primary">{feed.name}</CardTitle>
-                {feed.icon && <feed.icon className="h-6 w-6 text-accent" />}
+                <CardTitle className="text-lg font-medium text-foreground">{feed.name}</CardTitle>
+                {feed.icon && <feed.icon className="h-6 w-6 text-primary" />}
               </CardHeader>
               <CardContent>
                 <p className="text-xs text-muted-foreground mb-3">
                   Community discussions and news from Reddit.
                 </p>
-                <Button asChild variant="default" size="sm" className="w-full bg-accent hover:bg-accent/90 text-accent-foreground">
+                <Button asChild size="sm" className="w-full">
                   <Link href={feed.url} target="_blank" rel="noopener noreferrer">
                     View Feed <ExternalLink className="ml-2 h-4 w-4" />
                   </Link>
