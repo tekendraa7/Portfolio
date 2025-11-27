@@ -3,7 +3,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { ShieldCheck, Menu, X, MapPinned, Rss as BlogsIcon } from 'lucide-react'; // Added BlogsIcon
+import { ShieldCheck, Menu, X, MapPinned, Rss as BlogsIcon, TrendingUp } from 'lucide-react'; // Added BlogsIcon
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from '@/components/ui/sheet';
 import { cn } from '@/lib/utils';
@@ -14,8 +14,9 @@ const navItems = [
   { href: '/', label: 'Home' },
   { href: '/portfolio', label: 'Portfolio' },
   { href: '/qa', label: 'Q&A' },
-  { href: '/blogs', label: 'Blogs' }, // Changed from Resources to Blogs
+  { href: '/blogs', label: 'Blogs' },
   { href: '/roadmap', label: 'Roadmap' },
+  { href: '/market', label: 'Market' },
 ];
 
 interface NavLinkProps {
@@ -27,12 +28,7 @@ interface NavLinkProps {
 
 const NavLink: React.FC<NavLinkProps> = ({ href, label, onClick, className }) => {
   const pathname = usePathname();
-  // For roadmap, we want to highlight if any sub-path of /roadmap is active.
-  // For other links, exact match.
-  const isActive = href === '/roadmap' ? pathname.startsWith('/roadmap') : pathname === href;
-  // Also highlight /blogs if on that page
-  const isBlogsActive = href === '/blogs' ? pathname.startsWith('/blogs') : false;
-
+  const isActive = pathname === href;
 
   return (
     <Link
@@ -40,7 +36,7 @@ const NavLink: React.FC<NavLinkProps> = ({ href, label, onClick, className }) =>
       onClick={onClick}
       className={cn(
         "text-sm font-medium transition-colors hover:text-primary",
-        (isActive || isBlogsActive) ? "text-primary font-semibold" : "text-foreground/80",
+        isActive ? "text-primary font-semibold" : "text-foreground/80",
         className
       )}
     >
