@@ -1,7 +1,7 @@
 
 'use client';
 
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import { cn } from '@/lib/utils';
 
 interface Candle {
@@ -36,6 +36,23 @@ export const MarketBackground: React.FC<MarketBackgroundProps> = ({
 }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const animationFrameId = useRef<number>();
+  const [themeColors, setThemeColors] = useState({
+    primary: '210 100% 56%',
+    chart2: '190 100% 45%',
+    destructive: '0 84% 60%'
+  });
+
+  useEffect(() => {
+    // This effect runs once on mount to get the initial theme colors.
+    if (typeof window !== 'undefined') {
+      const computedStyles = getComputedStyle(document.documentElement);
+      setThemeColors({
+        primary: computedStyles.getPropertyValue('--primary').trim(),
+        chart2: computedStyles.getPropertyValue('--chart-2').trim(),
+        destructive: computedStyles.getPropertyValue('--destructive').trim()
+      });
+    }
+  }, []);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -61,7 +78,6 @@ export const MarketBackground: React.FC<MarketBackgroundProps> = ({
     };
 
     const createCandle = () => {
-      const isBullish = Math.random() > 0.5;
       const priceMove = (Math.random() - 0.5) * 50 * volatility;
       const open = lastPrice;
       const close = lastPrice + priceMove;
@@ -86,7 +102,7 @@ export const MarketBackground: React.FC<MarketBackgroundProps> = ({
     };
     
     const drawGrid = () => {
-      ctx.strokeStyle = 'hsla(var(--primary), 0.1)';
+      ctx.strokeStyle = `hsla(${themeColors.primary}, 0.1)`;
       ctx.lineWidth = 0.5;
 
       for (let x = canvas.width % gridDensityX; x < canvas.width; x += gridDensityX) {
@@ -114,26 +130,25 @@ export const MarketBackground: React.FC<MarketBackgroundProps> = ({
       ctx.lineTo(canvas.width, pulseY);
       
       const gradient = ctx.createLinearGradient(0, 0, canvas.width, 0);
-      gradient.addColorStop(0, 'hsla(var(--primary), 0)');
-      gradient.addColorStop(0.8, 'hsla(var(--primary), 0.5)');
-      gradient.addColorStop(1, 'hsla(var(--primary), 1)');
+      gradient.addColorStop(0, `hsla(${themeColors.primary}, 0)`);
+      gradient.addColorStop(0.8, `hsla(${themeColors.primary}, 0.5)`);
+      gradient.addColorStop(1, `hsla(${themeColors.primary}, 1)`);
       
       ctx.strokeStyle = gradient;
       ctx.lineWidth = 1;
-      ctx.shadowColor = 'hsl(var(--primary))';
+      ctx.shadowColor = `hsl(${themeColors.primary})`;
       ctx.shadowBlur = 5;
       ctx.stroke();
       ctx.shadowBlur = 0;
     };
     
     const drawCandles = () => {
-      candles.forEach((candle, index) => {
+      candles.forEach((candle) => {
         const bodyTop = Math.min(candle.open, candle.close);
         const bodyBottom = Math.max(candle.open, candle.close);
-        const bodyHeight = Math.abs(candle.open - candle.close);
 
-        const color = candle.isBullish ? 'hsl(var(--chart-2))' : 'hsl(var(--destructive))';
-        const glowColor = candle.isBullish ? 'hsl(var(--chart-2), 0.7)' : 'hsl(var(--destructive), 0.7)';
+        const color = candle.isBullish ? `hsl(${themeColors.chart2})` : `hsl(${themeColors.destructive})`;
+        const glowColor = candle.isBullish ? `hsla(${themeColors.chart2}, 0.7)` : `hsla(${themeColors.destructive}, 0.7)`;
 
         ctx.strokeStyle = color;
         ctx.fillStyle = color;
@@ -191,7 +206,7 @@ export const MarketBackground: React.FC<MarketBackgroundProps> = ({
       }
       window.removeEventListener('resize', handleResize);
     };
-  }, [spawnSpeed, candleWidth, volatility, gridDensityX, gridDensityY, glowStrength]);
+  }, [spawnSpeed, candleWidth, volatility, gridDensityX, gridDensityY, glowStrength, themeColors]);
 
   return (
     <canvas
@@ -201,5 +216,3 @@ export const MarketBackground: React.FC<MarketBackgroundProps> = ({
     />
   );
 };
-
-    
