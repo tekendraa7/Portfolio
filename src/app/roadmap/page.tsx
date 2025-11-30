@@ -776,28 +776,28 @@ export default function RoadmapPage() {
             <div className="mb-10">
             <h3 className="text-xl font-semibold text-secondary-foreground mb-4">Phase 1 – Foundations</h3>
             <div className="grid gap-4">
-                <a href="https://www.cybrary.it/career-path/foundations" target="_blank" rel="noopener" className="flex items-center p-4 bg-card rounded-lg shadow hover:shadow-md transition hover:bg-accent/10">
+                <a href="https://www.cybrary.it/career-path/foundations" target="_blank" rel="noopener noreferrer" className="flex items-center p-4 bg-card rounded-lg shadow hover:shadow-md transition hover:bg-accent/10">
                 <FaPlayCircle className="text-accent text-xl mr-4" />
                 <div>
                     <p className="font-semibold">Cybrary Foundations (videos + labs)</p>
                     <p className="text-xs text-muted-foreground">Full 12-week intro course</p>
                 </div>
                 </a>
-                <a href="https://www.netacad.com/courses/cybersecurity/introduction-cybersecurity" target="_blank" rel="noopener" className="flex items-center p-4 bg-card rounded-lg shadow hover:shadow-md transition hover:bg-accent/10">
+                <a href="https://www.netacad.com/courses/cybersecurity/introduction-cybersecurity" target="_blank" rel="noopener noreferrer" className="flex items-center p-4 bg-card rounded-lg shadow hover:shadow-md transition hover:bg-accent/10">
                 <FaCertificate className="text-accent text-xl mr-4" />
                 <div>
                     <p className="font-semibold">Cisco NetAcad – Intro to Cybersecurity</p>
                     <p className="text-xs text-muted-foreground">Free certificate</p>
                 </div>
                 </a>
-                <a href="https://wcu.edu.az/uploads/files/Cyber%20Security%20Essentials%20(%20PDFDrive%20).pdf" target="_blank" rel="noopener" className="flex items-center p-4 bg-card rounded-lg shadow hover:shadow-md transition hover:bg-accent/10">
+                <a href="https://wcu.edu.az/uploads/files/Cyber%20Security%20Essentials%20(%20PDFDrive%20).pdf" target="_blank" rel="noopener noreferrer" className="flex items-center p-4 bg-card rounded-lg shadow hover:shadow-md transition hover:bg-accent/10">
                 <FaFilePdf className="text-accent text-xl mr-4" />
                 <div>
                     <p className="font-semibold">“Cyber Security Essentials” PDF</p>
                     <p className="text-xs text-muted-foreground">Offline textbook</p>
                 </div>
                 </a>
-                <a href="https://www.youtube.com/c/professormesser" target="_blank" rel="noopener" className="flex items-center p-4 bg-card rounded-lg shadow hover:shadow-md transition hover:bg-accent/10">
+                <a href="https://www.youtube.com/c/professormesser" target="_blank" rel="noopener noreferrer" className="flex items-center p-4 bg-card rounded-lg shadow hover:shadow-md transition hover:bg-accent/10">
                 <FaYoutube className="text-accent text-xl mr-4" />
                 <div>
                     <p className="font-semibold">Professor Messer SY0-601 Playlist</p>
@@ -811,28 +811,28 @@ export default function RoadmapPage() {
             <div className="mb-10">
             <h3 className="text-xl font-semibold text-secondary-foreground mb-4">Phase 2 – Networking & Core Security</h3>
             <div className="grid gap-4">
-                <a href="https://www.gns3.com" target="_blank" rel="noopener" className="flex items-center p-4 bg-card rounded-lg shadow hover:shadow-md transition hover:bg-accent/10">
+                <a href="https://www.gns3.com" target="_blank" rel="noopener noreferrer" className="flex items-center p-4 bg-card rounded-lg shadow hover:shadow-md transition hover:bg-accent/10">
                 <FaNetworkWired className="text-accent text-xl mr-4" />
                 <div>
                     <p className="font-semibold">GNS3 Network Simulator</p>
                     <p className="text-xs text-muted-foreground">Virtual Cisco labs</p>
                 </div>
                 </a>
-                <a href="https://www.pfsense.org/download" target="_blank" rel="noopener" className="flex items-center p-4 bg-card rounded-lg shadow hover:shadow-md transition hover:bg-accent/10">
+                <a href="https://www.pfsense.org/download" target="_blank" rel="noopener noreferrer" className="flex items-center p-4 bg-card rounded-lg shadow hover:shadow-md transition hover:bg-accent/10">
                 <FaFire className="text-accent text-xl mr-4" />
                 <div>
                     <p className="font-semibold">pfSense Firewall VM</p>
                     <p className="text-xs text-muted-foreground">Enterprise-grade, free</p>
                 </div>
                 </a>
-                <a href="https://www.subnettingquestions.com" target="_blank" rel="noopener" className="flex items-center p-4 bg-card rounded-lg shadow hover:shadow-md transition hover:bg-accent/10">
+                <a href="https://www.subnettingquestions.com" target="_blank" rel="noopener noreferrer" className="flex items-center p-4 bg-card rounded-lg shadow hover:shadow-md transition hover:bg-accent/10">
                 <FaCalculator className="text-accent text-xl mr-4" />
                 <div>
                     <p className="font-semibold">Subnetting Practice</p>
                     <p className="text-xs text-muted-foreground">Drills & calculator</p>
                 </div>
                 </a>
-                <a href="https://youtu.be/OSo1XpahxyU" target="_blank" rel="noopener" className="flex items-center p-4 bg-card rounded-lg shadow hover:shadow-md transition hover:bg-accent/10">
+                <a href="https://youtu.be/OSo1XpahxyU" target="_blank" rel="noopener noreferrer" className="flex items-center p-4 bg-card rounded-lg shadow hover:shadow-md transition hover:bg-accent/10">
                 <FaYoutube className="text-accent text-xl mr-4" />
                 <div>
                     <p className="font-semibold">NetworkChuck – OSI Model Deep Dive</p>
@@ -846,21 +846,21 @@ export default function RoadmapPage() {
             <div className="mb-10">
             <h3 className="text-xl font-semibold text-secondary-foreground mb-4">Phase 3 – Operating Systems Deep Dive</h3>
             <div className="grid gap-4">
-                <a href="https://kali.training/downloads/Kali-Linux-Revealed.pdf" target="_blank" rel="noopener" className="flex items-center p-4 bg-card rounded-lg shadow hover:shadow-md transition hover:bg-accent/10">
+                <a href="https://kali.training/downloads/Kali-Linux-Revealed.pdf" target="_blank" rel="noopener noreferrer" className="flex items-center p-4 bg-card rounded-lg shadow hover:shadow-md transition hover:bg-accent/10">
                 <FaFilePdf className="text-accent text-xl mr-4" />
                 <div>
                     <p className="font-semibold">“Kali Linux Revealed” PDF</p>
                     <p className="text-xs text-muted-foreground">Official 300-page guide</p>
                 </div>
                 </a>
-                <a href="https://www.tcm-sec.com/p/linux-for-hackers" target="_blank" rel="noopener" className="flex items-center p-4 bg-card rounded-lg shadow hover:shadow-md transition hover:bg-accent/10">
+                <a href="https://www.tcm-sec.com/p/linux-for-hackers" target="_blank" rel="noopener noreferrer" className="flex items-center p-4 bg-card rounded-lg shadow hover:shadow-md transition hover:bg-accent/10">
                 <FaPlayCircle className="text-accent text-xl mr-4" />
                 <div>
                     <p className="font-semibold">TCM “Linux for Hackers”</p>
                     <p className="text-xs text-muted-foreground">Free course</p>
                 </div>
                 </a>
-                <a href="https://overthewire.org/wargames/bandit/" target="_blank" rel="noopener" className="flex items-center p-4 bg-card rounded-lg shadow hover:shadow-md transition hover:bg-accent/10">
+                <a href="https://overthewire.org/wargames/bandit/" target="_blank" rel="noopener noreferrer" className="flex items-center p-4 bg-card rounded-lg shadow hover:shadow-md transition hover:bg-accent/10">
                 <FaFlag className="text-accent text-xl mr-4" />
                 <div>
                     <p className="font-semibold">OverTheWire Bandit</p>
@@ -874,35 +874,35 @@ export default function RoadmapPage() {
             <div className="mb-10">
             <h3 className="text-xl font-semibold text-secondary-foreground mb-4">Phase 4 – Web Application Security</h3>
             <div className="grid gap-4">
-                <a href="https://pdfdrive.com/web-application-hackers-handbook-d18384091.html" target="_blank" rel="noopener" className="flex items-center p-4 bg-card rounded-lg shadow hover:shadow-md transition hover:bg-accent/10">
+                <a href="https://pdfdrive.com/web-application-hackers-handbook-d18384091.html" target="_blank" rel="noopener noreferrer" className="flex items-center p-4 bg-card rounded-lg shadow hover:shadow-md transition hover:bg-accent/10">
                 <FaFilePdf className="text-accent text-xl mr-4" />
                 <div>
                     <p className="font-semibold">“Web Application Hacker’s Handbook” PDF</p>
                     <p className="text-xs text-muted-foreground">2nd edition</p>
                 </div>
                 </a>
-                <a href="https://github.com/digininja/DVWA" target="_blank" rel="noopener" className="flex items-center p-4 bg-card rounded-lg shadow hover:shadow-md transition hover:bg-accent/10">
+                <a href="https://github.com/digininja/DVWA" target="_blank" rel="noopener noreferrer" className="flex items-center p-4 bg-card rounded-lg shadow hover:shadow-md transition hover:bg-accent/10">
                 <FaGithub className="text-accent text-xl mr-4" />
                 <div>
                     <p className="font-semibold">DVWA (Damn Vulnerable Web App)</p>
                     <p className="text-xs text-muted-foreground">Docker or direct download</p>
                 </div>
                 </a>
-                <a href="https://portswigger.net/web-security" target="_blank" rel="noopener" className="flex items-center p-4 bg-card rounded-lg shadow hover:shadow-md transition hover:bg-accent/10">
+                <a href="https://portswigger.net/web-security" target="_blank" rel="noopener noreferrer" className="flex items-center p-4 bg-card rounded-lg shadow hover:shadow-md transition hover:bg-accent/10">
                 <FaGraduationCap className="text-accent text-xl mr-4" />
                 <div>
                     <p className="font-semibold">PortSwigger Web-Security Academy</p>
                     <p className="text-xs text-muted-foreground">Free labs & theory</p>
                 </div>
                 </a>
-                <a href="https://pwning.owasp-juice.shop" target="_blank" rel="noopener" className="flex items-center p-4 bg-card rounded-lg shadow hover:shadow-md transition hover:bg-accent/10">
+                <a href="https://pwning.owasp-juice.shop" target="_blank" rel="noopener noreferrer" className="flex items-center p-4 bg-card rounded-lg shadow hover:shadow-md transition hover:bg-accent/10">
                 <FaFlask className="text-accent text-xl mr-4" />
                 <div>
                     <p className="font-semibold">OWASP Juice Shop</p>
                     <p className="text-xs text-muted-foreground">Modern vulnerable Node app</p>
                 </div>
                 </a>
-                <a href="https://portswigger.net/burp/communitydownload" target="_blank" rel="noopener" className="flex items-center p-4 bg-card rounded-lg shadow hover:shadow-md transition hover:bg-accent/10">
+                <a href="https://portswigger.net/burp/communitydownload" target="_blank" rel="noopener noreferrer" className="flex items-center p-4 bg-card rounded-lg shadow hover:shadow-md transition hover:bg-accent/10">
                 <FaDownload className="text-accent text-xl mr-4" />
                 <div>
                     <p className="font-semibold">Burp Suite Community</p>
@@ -916,14 +916,14 @@ export default function RoadmapPage() {
             <div className="mb-10">
                 <h3 className="text-xl font-semibold text-secondary-foreground mb-4">Phase 5 – Cryptography & Protocols</h3>
                 <div className="grid gap-4">
-                    <a href="https://youtube.com/playlist?list=PL8e3AEx7aHQ" target="_blank" rel="noopener" className="flex items-center p-4 bg-card rounded-lg shadow hover:shadow-md transition hover:bg-accent/10">
+                    <a href="https://youtube.com/playlist?list=PL8e3AEx7aHQ" target="_blank" rel="noopener noreferrer" className="flex items-center p-4 bg-card rounded-lg shadow hover:shadow-md transition hover:bg-accent/10">
                         <FaYoutube className="text-accent text-xl mr-4" />
                         <div>
                         <p className="font-semibold">Christof Paar – Complete Crypto Lectures</p>
                         <p className="text-xs text-muted-foreground">24 hrs, YouTube</p>
                         </div>
                     </a>
-                    <a href="https://www.feistyduck.com/library/openssl-cookbook.pdf" target="_blank" rel="noopener" className="flex items-center p-4 bg-card rounded-lg shadow hover:shadow-md transition hover:bg-accent/10">
+                    <a href="https://www.feistyduck.com/library/openssl-cookbook.pdf" target="_blank" rel="noopener noreferrer" className="flex items-center p-4 bg-card rounded-lg shadow hover:shadow-md transition hover:bg-accent/10">
                         <FaFilePdf className="text-accent text-xl mr-4" />
                         <div>
                         <p className="font-semibold">OpenSSL Cook-book PDF</p>
@@ -937,14 +937,14 @@ export default function RoadmapPage() {
             <div className="mb-10">
                 <h3 className="text-xl font-semibold text-secondary-foreground mb-4">Phase 6 – Penetration Testing & Tools</h3>
                 <div className="grid gap-4">
-                    <a href="https://youtube.com/playlist?list=PLBfufR7vyJJ7k1H4QnlSRAdT-JZc-8a1s" target="_blank" rel="noopener" className="flex items-center p-4 bg-card rounded-lg shadow hover:shadow-md transition hover:bg-accent/10">
+                    <a href="https://youtube.com/playlist?list=PLBfufR7vyJJ7k1H4QnlSRAdT-JZc-8a1s" target="_blank" rel="noopener noreferrer" className="flex items-center p-4 bg-card rounded-lg shadow hover:shadow-md transition hover:bg-accent/10">
                         <FaYoutube className="text-accent text-xl mr-4" />
                         <div>
                         <p className="font-semibold">TCM “Practical Ethical Hacking”</p>
                         <p className="text-xs text-muted-foreground">YouTube mirror</p>
                         </div>
                     </a>
-                    <a href="https://www.offensive-security.com/metasploit-unleashed/" target="_blank" rel="noopener" className="flex items-center p-4 bg-card rounded-lg shadow hover:shadow-md transition hover:bg-accent/10">
+                    <a href="https://www.offensive-security.com/metasploit-unleashed/" target="_blank" rel="noopener noreferrer" className="flex items-center p-4 bg-card rounded-lg shadow hover:shadow-md transition hover:bg-accent/10">
                         <FaRocket className="text-accent text-xl mr-4" />
                         <div>
                         <p className="font-semibold">Metasploit Unleashed</p>
@@ -957,21 +957,21 @@ export default function RoadmapPage() {
             <div className="mb-10">
                 <h3 className="text-xl font-semibold text-secondary-foreground mb-4">Always-Open Libraries & References</h3>
                 <div className="grid gap-4">
-                    <a href="https://opensecuritytraining.info" target="_blank" rel="noopener" className="flex items-center p-4 bg-card rounded-lg shadow hover:shadow-md transition hover:bg-accent/10">
+                    <a href="https://opensecuritytraining.info" target="_blank" rel="noopener noreferrer" className="flex items-center p-4 bg-card rounded-lg shadow hover:shadow-md transition hover:bg-accent/10">
                         <FaUniversity className="text-accent text-xl mr-4" />
                         <div>
                         <p className="font-semibold">OpenSecurityTraining Archive</p>
                         <p className="text-xs text-muted-foreground">Whole university curriculum</p>
                         </div>
                     </a>
-                    <a href="https://github.com/enaqx/awesome-pentest" target="_blank" rel="noopener" className="flex items-center p-4 bg-card rounded-lg shadow hover:shadow-md transition hover:bg-accent/10">
+                    <a href="https://github.com/enaqx/awesome-pentest" target="_blank" rel="noopener noreferrer" className="flex items-center p-4 bg-card rounded-lg shadow hover:shadow-md transition hover:bg-accent/10">
                         <FaGithub className="text-accent text-xl mr-4" />
                         <div>
                         <p className="font-semibold">Awesome-Pentest GitHub List</p>
                         <p className="text-xs text-muted-foreground">Curated tools & blogs</p>
                         </div>
                     </a>
-                     <a href="https://ctftime.org" target="_blank" rel="noopener" className="flex items-center p-4 bg-card rounded-lg shadow hover:shadow-md transition hover:bg-accent/10">
+                     <a href="https://ctftime.org" target="_blank" rel="noopener noreferrer" className="flex items-center p-4 bg-card rounded-lg shadow hover:shadow-md transition hover:bg-accent/10">
                         <FaTrophy className="text-accent text-xl mr-4" />
                         <div>
                         <p className="font-semibold">CTFtime.org</p>
@@ -998,24 +998,24 @@ export default function RoadmapPage() {
                     <ul className="space-y-2 text-sm">
                     <li><a href="#phase-1" className="hover:text-accent transition-colors">Phase 1 Foundations</a></li>
                     <li><a href="#free-resources" className="hover:text-accent transition-colors">Free Resources</a></li>
-                    <li><a href="https://github.com/enaqx/awesome-pentest" target="_blank" rel="noopener" className="hover:text-accent transition-colors">Awesome-Pentest GitHub</a></li>
+                    <li><a href="https://github.com/enaqx/awesome-pentest" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">Awesome-Pentest GitHub</a></li>
                     </ul>
                 </div>
                 <div>
                     <h3 className="text-xl font-semibold mb-4">Keep Learning</h3>
                     <ul className="space-y-2 text-sm">
-                    <li><a href="https://ctftime.org" target="_blank" rel="noopener" className="hover:text-accent transition-colors">CTFtime – global CTF calendar</a></li>
-                    <li><a href="https://opensecuritytraining.info" target="_blank" rel="noopener" className="hover:text-accent transition-colors">OpenSecurityTraining archive</a></li>
-                    <li><a href="https://www.cybrary.it/career-path/foundations" target="_blank" rel="noopener" className="hover:text-accent transition-colors">Cybrary Foundations</a></li>
+                    <li><a href="https://ctftime.org" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">CTFtime – global CTF calendar</a></li>
+                    <li><a href="https://opensecuritytraining.info" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">OpenSecurityTraining archive</a></li>
+                    <li><a href="https://www.cybrary.it/career-path/foundations" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">Cybrary Foundations</a></li>
                     </ul>
                 </div>
                 <div>
                     <h3 className="text-xl font-semibold mb-4">Community</h3>
                     <ul className="space-y-2 text-sm">
-                    <li><a href="https://www.reddit.com/r/netsec/" target="_blank" rel="noopener" className="hover:text-accent transition-colors">r/netsec</a></li>
-                    <li><a href="https://www.reddit.com/r/cybersecurity/" target="_blank" rel="noopener" className="hover:text-accent transition-colors">r/cybersecurity</a></li>
-                    <li><a href="https://tryhackme.com" target="_blank" rel="noopener" className="hover:text-accent transition-colors">TryHackMe</a></li>
-                    <li><a href="https://hackthebox.com" target="_blank" rel="noopener" className="hover:text-accent transition-colors">Hack The Box</a></li>
+                    <li><a href="https://www.reddit.com/r/netsec/" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">r/netsec</a></li>
+                    <li><a href="https://www.reddit.com/r/cybersecurity/" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">r/cybersecurity</a></li>
+                    <li><a href="https://tryhackme.com" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">TryHackMe</a></li>
+                    <li><a href="https://hackthebox.com" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">Hack The Box</a></li>
                     </ul>
                 </div>
                 </div>
