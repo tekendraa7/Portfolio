@@ -31,7 +31,7 @@ export const aboutData = {
   title: "Computer Engineering Student",
   university: "Far Western University",
   bio: "I am a passionate computer engineering student with a strong interest in cybersecurity, Linux systems, and networking. I am dedicated to continuous learning and applying my knowledge to solve real-world problems. This portfolio showcases my journey, projects, and the resources I find valuable.",
-  profileImageUrl: "https://storage.googleapis.com/project-os-frontend/images/e3981816-566b-4b21-99da-d38d1d3680e9.png",
+  profileImageUrl: "t.jpg",
   profileImageHint: "profile photo",
   skills: [
     { name: "Linux Administration", level: 85 },
