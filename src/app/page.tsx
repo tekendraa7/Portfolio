@@ -17,15 +17,16 @@ export default function Home() {
           <div className="absolute -top-1/2 -left-1/2 w-[200%] h-[200%] bg-[radial-gradient(circle_at_center,_rgba(var(--primary-rgb),0.08)_0%,_transparent_40%)] -z-10 animate-[spin_20s_linear_infinite]"></div>
           
           <div className="container mx-auto px-4 relative z-10">
-              <Image
-                  src={aboutData.profileImageUrl || "https://placehold.co/128x128.png"}
-                  alt={aboutData.name || "Profile Picture"}
-                  width={128}
-                  height={128}
-                  priority
-                  className="rounded-full shadow-lg border-4 border-background/80 object-cover mx-auto mb-6"
-                  data-ai-hint={aboutData.profileImageHint || "profile photo"}
-                />
+              <div className="relative w-32 h-32 mx-auto mb-6">
+                <Image
+                    src={aboutData.profileImageUrl || "https://placehold.co/128x128.png"}
+                    alt={aboutData.name || "Profile Picture"}
+                    fill
+                    priority
+                    className="rounded-full shadow-lg border-4 border-background/80 object-cover"
+                    data-ai-hint={aboutData.profileImageHint || "profile photo"}
+                  />
+              </div>
               <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-foreground mb-4 text-glow">
                 Tekendra Bhandari
               </h1>

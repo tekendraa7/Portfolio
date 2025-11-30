@@ -13,22 +13,21 @@ export function AboutSection({ data }: AboutSectionProps) {
   return (
     <Card className="shadow-lg">
       <div className="p-6 md:p-8">
-        {/* Image container - centered circle */}
-        <div className="w-40 h-40 md:w-48 md:h-48 mx-auto relative rounded-full overflow-hidden shadow-md mb-6 border-2 border-primary/50">
+        <div className="relative w-40 h-40 md:w-48 md:h-48 mx-auto mb-6">
           {data.profileImageUrl && (
             <Image
               src={data.profileImageUrl}
               alt={data.name}
-              layout="fill"
-              objectFit="cover"
+              fill
+              className="rounded-full object-cover border-4 border-primary/50 shadow-md"
               data-ai-hint={data.profileImageHint}
             />
           )}
         </div>
         
         {/* Text content container */}
-        <div>
-          <CardHeader className="p-0 mb-4 text-center"> {/* Centered Header */}
+        <div className="text-center">
+          <CardHeader className="p-0 mb-4">
             <CardTitle className="text-3xl font-bold text-primary">{data.name}</CardTitle>
             <p className="text-lg text-accent">{data.title}</p>
             <div className="flex items-center justify-center text-muted-foreground mt-1">
@@ -37,12 +36,10 @@ export function AboutSection({ data }: AboutSectionProps) {
             </div>
           </CardHeader>
           <CardContent className="p-0">
-            {/* Bio: centered block, text also centered for consistency as it's short */}
-            <p className="text-foreground/90 mb-6 max-w-xl mx-auto text-center">{data.bio}</p>
+            <p className="text-foreground/90 mb-6 max-w-xl mx-auto text-left md:text-center">{data.bio}</p>
 
-            {/* Skills: centered heading, then centered block for skills */}
-            <h3 className="text-xl font-semibold text-primary mb-3 mt-8 text-center">Skills</h3>
-            <div className="space-y-3 max-w-md mx-auto"> {/* Centers the block of skills */}
+            <h3 className="text-xl font-semibold text-primary mb-3 mt-8">Skills</h3>
+            <div className="space-y-3 max-w-md mx-auto text-left">
               {data.skills.map((skill) => (
                 <div key={skill.name}>
                   <div className="flex justify-between mb-1">
