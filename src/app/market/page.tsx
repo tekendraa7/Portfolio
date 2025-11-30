@@ -8,6 +8,7 @@ import Image from 'next/image';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 import { SectionTitle } from '@/components/ui/SectionTitle';
 import { MarketBackground } from '@/components/market/MarketBackground';
+import { BullBearAnimation } from '@/components/market/BullBearAnimation';
 
 
 // Register Chart.js components
@@ -125,8 +126,9 @@ const MarketPage = () => {
 
     return (
         <div className="relative min-h-screen">
+            <BullBearAnimation className="absolute top-0 left-0 -z-10 h-1/2 w-full opacity-100" />
             <MarketBackground 
-                className="absolute inset-0 -z-10 h-full w-full opacity-100" 
+                className="absolute bottom-0 left-0 -z-10 h-1/2 w-full opacity-100" 
                 candleWidth={12}
                 volatility={1.5}
                 spawnSpeed={1.5}
@@ -285,5 +287,3 @@ const MarketPage = () => {
 };
 
 export default MarketPage;
-
-    
