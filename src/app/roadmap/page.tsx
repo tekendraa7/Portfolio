@@ -151,12 +151,13 @@ export default function RoadmapPage() {
         <section className="relative overflow-hidden text-white bg-gradient-to-br from-primary/20 via-background to-secondary/20">
             <div className="absolute inset-0">
                 <Image
-                src="https://i.imgur.com/NGLz3G0.gif"
+                src="https://picsum.photos/seed/cyber-landscape/1920/1080"
                 alt="Cybersecurity digital landscape"
-                layout="fill"
+                fill
                 objectFit="cover"
                 className="opacity-20"
                 unoptimized
+                data-ai-hint="digital security"
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-background/80 to-background/60"></div>
             </div>
@@ -1030,6 +1031,47 @@ export default function RoadmapPage() {
             </footer>
       </div>
     </div>
-  );
-}
 
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Highlight active section in TOC
+        const sections = document.querySelectorAll('section[id]');
+        const tocLinks = document.querySelectorAll('.toc-fixed a[href^="#"]');
+
+        function highlightActiveSection() {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.pageYOffset >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            tocLinks.forEach(link => {
+                link.classList.remove('font-semibold', 'text-accent');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('font-semibold', 'text-accent');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', highlightActiveSection);
+        highlightActiveSection(); // Initial call
+    </script>
+</body>
+
+</html>
