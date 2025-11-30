@@ -1026,8 +1026,8 @@ export default function RoadmapPage() {
             </div>
             </footer>
       </div>
+    </div>
+  );
+}
+
     
-
-</body>
-
-</html>
