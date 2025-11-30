@@ -49,15 +49,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="h-full" suppressHydrationWarning>
-      <body className={cn(inter.variable, "font-sans h-full flex flex-col")}>
+      <body className={cn(inter.variable, "font-sans h-full flex flex-col bg-background")}>
         <ThemeProvider
             attribute="class"
-            defaultTheme="light" // Changed default to light
+            defaultTheme="dark" // Changed default to dark to match hacker theme
             enableSystem
             disableTransitionOnChange
         >
           <CyberBackground />
-          <div className="relative z-10 flex flex-col h-full">
+          <div className="relative z-10 flex flex-col h-full bg-transparent">
             <Header />
             <main className="flex-grow pt-16">
               {children}
@@ -71,5 +71,3 @@ export default function RootLayout({
     </html>
   );
 }
-
-    
