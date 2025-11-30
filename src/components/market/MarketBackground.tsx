@@ -37,19 +37,20 @@ export const MarketBackground: React.FC<MarketBackgroundProps> = ({
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const animationFrameId = useRef<number>();
   const [themeColors, setThemeColors] = useState({
-    primary: '210 100% 56%',
-    chart2: '190 100% 45%',
-    destructive: '0 84% 60%'
+    primary: '210, 100%, 56%',
+    chart2: '190, 100%, 45%',
+    destructive: '0, 84%, 60%'
   });
 
   useEffect(() => {
-    // This effect runs once on mount to get the initial theme colors.
     if (typeof window !== 'undefined') {
       const computedStyles = getComputedStyle(document.documentElement);
+      // Fetches CSS variables and ensures they use commas for canvas compatibility.
+      const getThemeColor = (varName: string) => computedStyles.getPropertyValue(varName).trim().replace(/\s+/g, ',');
       setThemeColors({
-        primary: computedStyles.getPropertyValue('--primary').trim(),
-        chart2: computedStyles.getPropertyValue('--chart-2').trim(),
-        destructive: computedStyles.getPropertyValue('--destructive').trim()
+        primary: getThemeColor('--primary'),
+        chart2: getThemeColor('--chart-2'),
+        destructive: getThemeColor('--destructive')
       });
     }
   }, []);
@@ -176,6 +177,7 @@ export const MarketBackground: React.FC<MarketBackgroundProps> = ({
     };
 
     const draw = () => {
+      if (!ctx || !canvas) return;
       const rect = canvas.getBoundingClientRect();
       ctx.clearRect(0, 0, rect.width, rect.height);
       
