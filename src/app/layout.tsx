@@ -9,6 +9,7 @@ import { cn } from '@/lib/utils';
 import { ThemeProvider } from '@/components/layout/ThemeProvider';
 import { FloatingChatButton } from '@/components/chat/FloatingChatButton';
 import imageData from '@/lib/placeholder-images.json';
+import { CyberBackground } from '@/components/layout/CyberBackground';
 
 const inter = Inter({
   variable: '--font-sans', // Use sans-serif variable
@@ -48,18 +49,21 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="h-full" suppressHydrationWarning>
-      <body className={cn(inter.variable, "font-sans h-full flex flex-col")}> {/* Changed font class */}
+      <body className={cn(inter.variable, "font-sans h-full flex flex-col")}>
         <ThemeProvider
             attribute="class"
             defaultTheme="light" // Changed default to light
             enableSystem
             disableTransitionOnChange
         >
-          <Header />
-          <main className="flex-grow pt-16">
-            {children}
-          </main>
-          <Footer />
+          <CyberBackground />
+          <div className="relative z-10 flex flex-col h-full">
+            <Header />
+            <main className="flex-grow pt-16">
+              {children}
+            </main>
+            <Footer />
+          </div>
           <Toaster />
           <FloatingChatButton /> {/* Add floating chat button here */}
         </ThemeProvider>
