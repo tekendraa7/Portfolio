@@ -151,8 +151,7 @@ export default function RoadmapPage() {
                 src="https://picsum.photos/seed/cyber-landscape/1920/1080"
                 alt="Cybersecurity digital landscape"
                 fill
-                objectFit="cover"
-                className="opacity-20"
+                className="object-cover opacity-20"
                 unoptimized
                 data-ai-hint="digital security"
                 />
