@@ -4,7 +4,6 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import type { aboutData as AboutDataType } from "@/data/portfolioData";
 import { GraduationCap } from "lucide-react";
-import { MatrixBackground } from "./MatrixBackground";
 
 interface AboutSectionProps {
   data: typeof AboutDataType;
@@ -14,8 +13,6 @@ export function AboutSection({ data }: AboutSectionProps) {
   return (
     <Card className="shadow-lg overflow-hidden">
       <div className="relative p-6 md:p-8">
-        <MatrixBackground />
-        
         <div className="relative z-10 flex flex-col items-center text-center">
             <div className="relative w-40 h-40 md:w-48 md:h-48 mx-auto mb-6">
             {data.profileImageUrl && (

@@ -2,8 +2,9 @@
 'use client';
 
 import React, { useRef, useEffect } from 'react';
+import { cn } from '@/lib/utils';
 
-interface MatrixBackgroundProps {
+interface MatrixBackgroundProps extends React.HTMLAttributes<HTMLCanvasElement> {
   dropSpeed?: number;
   density?: number;
   glowIntensity?: number;
@@ -12,14 +13,15 @@ interface MatrixBackgroundProps {
 }
 
 export const MatrixBackground: React.FC<MatrixBackgroundProps> = ({
+  className,
   dropSpeed = 0.8,
   density = 0.975,
   glowIntensity = 5,
   fontSize = 14,
   parallax = 0.00005,
+  ...props
 }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -104,12 +106,10 @@ export const MatrixBackground: React.FC<MatrixBackgroundProps> = ({
   }, [dropSpeed, density, glowIntensity, fontSize, parallax]);
 
   return (
-    <div
-      ref={containerRef}
-      className="absolute inset-0 z-0 overflow-hidden rounded-lg transition-transform duration-300 ease-out"
-      style={{ pointerEvents: 'none' }}
-    >
-        <canvas ref={canvasRef} className="opacity-20" />
-    </div>
+    <canvas
+      ref={canvasRef}
+      className={cn("pointer-events-none", className)}
+      {...props}
+    />
   );
 };
