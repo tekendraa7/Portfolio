@@ -7,6 +7,7 @@
   :root {
     --background: 210 20% 98%; /* Almost white */
     --foreground: 224 71% 4%; /* Dark Blue-Black */
+    --primary-rgb: 77 163 255; /* RGB for primary color */
 
     --muted: 210 20% 88%;
     --muted-foreground: 215 28% 45%;
@@ -46,6 +47,7 @@
   .dark {
     --background: 224 71% 4%; /* Dark Blue-Black */
     --foreground: 210 20% 98%;
+    --primary-rgb: 77 163 255;
 
     --muted: 220 40% 12%;
     --muted-foreground: 215 28% 65%;
