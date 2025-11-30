@@ -125,7 +125,12 @@ const MarketPage = () => {
 
     return (
         <div className="relative min-h-screen">
-            <MarketBackground className="absolute inset-0 -z-10 h-full w-full opacity-100" />
+            <MarketBackground 
+                className="absolute inset-0 -z-10 h-full w-full opacity-100" 
+                candleWidth={12}
+                volatility={1.5}
+                spawnSpeed={1.5}
+            />
 
             <div className="relative z-10">
                 {/* Hero */}
