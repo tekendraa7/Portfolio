@@ -71,9 +71,8 @@ export default function RoadmapPage() {
       }
     };
 
-    document
-      .querySelectorAll('a[href^="#"]')
-      .forEach((anchor) => anchor.addEventListener("click", smoothScroll as EventListener));
+    const anchors = document.querySelectorAll('a[href^="#"]');
+    anchors.forEach((anchor) => anchor.addEventListener("click", smoothScroll as EventListener));
 
     // Highlight active section in TOC
     const sections = document.querySelectorAll("section[id]");
@@ -100,9 +99,7 @@ export default function RoadmapPage() {
     highlightActiveSection(); // Initial call
 
     return () => {
-      document
-        .querySelectorAll('a[href^="#"]')
-        .forEach((anchor) => anchor.removeEventListener("click", smoothScroll as EventListener));
+      anchors.forEach((anchor) => anchor.removeEventListener("click", smoothScroll as EventListener));
       window.removeEventListener("scroll", highlightActiveSection);
     };
   }, []);
@@ -1030,48 +1027,8 @@ export default function RoadmapPage() {
             </div>
             </footer>
       </div>
-    </div>
+    
 
-    <script>
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Highlight active section in TOC
-        const sections = document.querySelectorAll('section[id]');
-        const tocLinks = document.querySelectorAll('.toc-fixed a[href^="#"]');
-
-        function highlightActiveSection() {
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (window.pageYOffset >= sectionTop - 200) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            tocLinks.forEach(link => {
-                link.classList.remove('font-semibold', 'text-accent');
-                if (link.getAttribute('href') === `#${current}`) {
-                    link.classList.add('font-semibold', 'text-accent');
-                }
-            });
-        }
-
-        window.addEventListener('scroll', highlightActiveSection);
-        highlightActiveSection(); // Initial call
-    </script>
 </body>
 
 </html>
