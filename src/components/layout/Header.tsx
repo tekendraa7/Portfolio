@@ -1,4 +1,3 @@
-
 "use client";
 
 import Link from 'next/link';
@@ -16,7 +15,6 @@ const navItems = [
   { href: '/qa', label: 'Q&A' },
   { href: '/blogs', label: 'Research' },
   { href: '/roadmap', label: 'Roadmap' },
-  { href: '/market', label: 'Market' },
 ];
 
 interface NavLinkProps {
