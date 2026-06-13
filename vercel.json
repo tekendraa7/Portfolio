@@ -1,7 +1,10 @@
 {
-  "version": 3,
-  "rootDirectory": ".migration-backup",
-  "framework": {
-    "name": "nextjs"
-  }
+  "version": 2,
+  "installCommand": "pnpm install",
+  "builds": [
+    {
+      "src": ".migration-backup/package.json",
+      "use": "@vercel/next"
+    }
+  ]
 }
