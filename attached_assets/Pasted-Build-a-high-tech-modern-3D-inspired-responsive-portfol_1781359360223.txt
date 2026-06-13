@@ -1,0 +1,193 @@
+Build a high-tech, modern, 3D-inspired, responsive portfolio website for a computer engineering and cybersecurity student named Tekendra Bhandari. The site should feel like a professional CV + personal brand + portfolio + blog all in one.
+
+The design must be scrollable, mobile-friendly, and optimized for both phone and desktop. Use a clean cyber aesthetic with futuristic visuals, subtle glowing effects, smooth animations, glassmorphism-style cards, and a polished professional look. The site should feel like a premium student tech profile rather than a plain resume page.
+
+Main goals
+Present Tekendra’s profile as a cybersecurity and computer engineering student
+Function like an online CV / portfolio
+Showcase education, projects, skills, blog, certificates, and contact links
+Include a downloadable CV button with a placeholder for the PDF
+Keep the Roadmap section as it is
+Remove the Q&A section and Research section
+Make the whole site feel interactive, modern, and professional
+Site Structure
+1) Home / Hero Section
+
+Create a strong landing section with:
+
+A profile photo
+A short intro headline
+A professional bio summary
+A clean subtitle like:
+Computer Engineering Student | Cybersecurity Enthusiast | Builder | Learner
+Buttons for:
+Download CV
+View Portfolio
+Explore Blog
+Display social/profile links:
+GitHub
+LinkedIn
+Email
+
+This section should immediately show who Tekendra is and what he does.
+
+2) Bio / About Section
+
+Add a well-designed bio section that includes:
+
+A short introduction
+Educational background
+Career interest in cybersecurity, software, networking, and web development
+A professional but student-focused tone
+Education details:
+Shree Siddhanath Secondary School, Dhangadhi, Kailali
+SLC, Kailali Multiple Campus, Dhangadhi
+Bachelor’s Degree, Far Western University, School of Engineering, Mahendranagar, Kanchanpur
+
+Make this section elegant and easy to read, with icons, timeline styling, or cards.
+
+3) Portfolio / Projects Section
+
+Create a portfolio section that highlights projects, especially:
+
+Cyber Security Club website frontend and UI
+GitHub repository:
+https://github.com/sharppankaj/CSC-FWU
+
+Show each project in a professional card layout with:
+
+Project title
+Short description
+Tech stack used
+GitHub link
+Live/demo placeholder if available
+
+Also include a section for interested technologies / skills, such as:
+
+Linux
+HTML
+CSS
+Python
+Bash
+C
+C++
+Networking
+VS Code
+Cybersecurity tools and related workflow
+
+This section should look polished, technical, and visually strong.
+
+4) CV Download Section
+
+Add a clear section for:
+
+Downloadable CV / Resume PDF
+Use a button or card that says:
+Download CV
+or View Resume
+Leave it ready for a future PDF upload
+
+This should be easy to access from both the hero section and the portfolio section.
+
+5) Blog / Newsletter Section
+
+Create a blog area with a modern card-based layout.
+
+Include:
+
+Subscribe to newsletter
+Short writeups about:
+tech
+cybersecurity
+student life
+tools and learning
+Recent posts preview cards
+A clean newsletter signup form
+
+Make the blog feel useful and active, even if some posts are placeholders for now.
+
+6) Certificates Section
+
+Add a certificates section where PDF certificates can be uploaded and displayed.
+
+Include:
+
+Certificate cards
+Title of certificate
+Issuing platform or institution
+PDF preview/download link
+
+Make it organized and visually neat.
+
+7) Contact Section
+
+Add a clean contact section with:
+
+Email
+Location: Dhangadhi
+GitHub
+LinkedIn
+Other relevant links
+
+This section should be simple, modern, and professional, with icon-based buttons or cards.
+
+8) Roadmap Section
+
+Keep the Roadmap section as a major part of the site.
+
+It should remain:
+
+visually strong
+interactive
+forward-looking
+related to personal growth, learning goals, or career path
+
+Do not remove or replace this section.
+
+Design Requirements
+Fully responsive
+Works beautifully on mobile, tablet, and desktop
+Smooth scrolling with section navigation
+Modern cyber/futuristic design language
+Clean typography
+Subtle animations on scroll and hover
+Premium visual spacing
+Dark-tech theme preferred, but elegant and readable
+Use modern UI elements like:
+glass cards
+gradient accents
+glowing buttons
+animated section reveals
+timeline layouts
+icon-based navigation
+Content Tone
+
+The website should communicate:
+
+confidence
+professionalism
+technical curiosity
+student identity
+growth mindset
+cybersecurity focus
+
+It should feel like a living CV + portfolio + blog + roadmap for a future tech professional.
+
+Sections to Remove
+
+Remove completely:
+
+Q&A section
+Research section
+Final Expected Output
+
+A single-page scrollable website that is:
+
+modern
+responsive
+cyber-themed
+CV-like
+portfolio-driven
+blog-ready
+certificate-friendly
+professional for a computer engineering student

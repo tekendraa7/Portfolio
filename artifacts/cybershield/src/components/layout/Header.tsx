@@ -10,10 +10,12 @@ import { ThemeToggle } from '@/components/layout/ThemeToggle';
 
 const navItems = [
   { href: '/', label: 'Home' },
+  { href: '/about', label: 'About' },
   { href: '/portfolio', label: 'Portfolio' },
-  { href: '/qa', label: 'Q&A' },
-  { href: '/blogs', label: 'Research' },
+  { href: '/blog', label: 'Blog' },
+  { href: '/certificates', label: 'Certificates' },
   { href: '/roadmap', label: 'Roadmap' },
+  { href: '/contact', label: 'Contact' },
 ];
 
 interface NavLinkProps {
@@ -70,12 +72,12 @@ export function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 w-full border-b bg-background/90 backdrop-blur-sm">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
-        <Link href="/" className="flex items-center gap-2">
+        <Link href="/" className="flex items-center gap-2 shrink-0">
           <ShieldCheck className="h-7 w-7 text-primary" />
           <span className="text-xl font-bold text-foreground">CyberShield</span>
         </Link>
 
-        <nav className="hidden md:flex items-center space-x-6">
+        <nav className="hidden lg:flex items-center space-x-5">
           {navItems.map((item) => (
             <NavLink key={item.href} href={item.href} label={item.label} />
           ))}
@@ -83,7 +85,7 @@ export function Header() {
 
         <div className="flex items-center gap-2">
           <ThemeToggle />
-          <div className="md:hidden">
+          <div className="lg:hidden">
             <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
               <SheetTrigger asChild>
                 <Button variant="ghost" size="icon">
