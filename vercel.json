@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "rootDirectory": ".migration-backup",
+  "framework": {
+    "name": "nextjs"
+  }
+}
