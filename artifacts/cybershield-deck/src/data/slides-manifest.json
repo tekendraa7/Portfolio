@@ -1,0 +1,82 @@
+[
+  {
+    "id": "a1b2c3d4-e5f6-7890-abcd-ef1234567801",
+    "position": 1,
+    "filepath": "src/pages/slides/Slide01Title.tsx",
+    "title": "Tekendra Bhandari",
+    "description": "Title slide — name, title, university, and year",
+    "speakerNotes": ""
+  },
+  {
+    "id": "a1b2c3d4-e5f6-7890-abcd-ef1234567802",
+    "position": 2,
+    "filepath": "src/pages/slides/Slide02About.tsx",
+    "title": "About Me",
+    "description": "Bio, current study, focus areas, and location",
+    "speakerNotes": ""
+  },
+  {
+    "id": "a1b2c3d4-e5f6-7890-abcd-ef1234567803",
+    "position": 3,
+    "filepath": "src/pages/slides/Slide03Skills.tsx",
+    "title": "Technical Skills",
+    "description": "Four skill categories: Languages, Systems, Security, Currently Learning",
+    "speakerNotes": ""
+  },
+  {
+    "id": "a1b2c3d4-e5f6-7890-abcd-ef1234567804",
+    "position": 4,
+    "filepath": "src/pages/slides/Slide04CyberShield.tsx",
+    "title": "CyberShield Portfolio",
+    "description": "Featured project — AI chatbot, 7-page site, dark cyber theme",
+    "speakerNotes": ""
+  },
+  {
+    "id": "a1b2c3d4-e5f6-7890-abcd-ef1234567805",
+    "position": 5,
+    "filepath": "src/pages/slides/Slide05TechStack.tsx",
+    "title": "CyberShield: Tech Stack",
+    "description": "Frontend, Backend, AI, and Mobile layers of CyberShield",
+    "speakerNotes": ""
+  },
+  {
+    "id": "a1b2c3d4-e5f6-7890-abcd-ef1234567806",
+    "position": 6,
+    "filepath": "src/pages/slides/Slide06Projects.tsx",
+    "title": "Other Projects",
+    "description": "CSC-FWU Website, Network Traffic Analyzer, Secure Encryption Utility",
+    "speakerNotes": ""
+  },
+  {
+    "id": "a1b2c3d4-e5f6-7890-abcd-ef1234567807",
+    "position": 7,
+    "filepath": "src/pages/slides/Slide07Education.tsx",
+    "title": "Education",
+    "description": "Three-stage education timeline from secondary school to university",
+    "speakerNotes": ""
+  },
+  {
+    "id": "a1b2c3d4-e5f6-7890-abcd-ef1234567808",
+    "position": 8,
+    "filepath": "src/pages/slides/Slide08Certificates.tsx",
+    "title": "Certificates",
+    "description": "Introduction to Bash, Python for Cyber Security, Introduction to Figma",
+    "speakerNotes": ""
+  },
+  {
+    "id": "a1b2c3d4-e5f6-7890-abcd-ef1234567809",
+    "position": 9,
+    "filepath": "src/pages/slides/Slide09Roadmap.tsx",
+    "title": "Learning Roadmap",
+    "description": "Six-phase learning roadmap with completion status",
+    "speakerNotes": ""
+  },
+  {
+    "id": "a1b2c3d4-e5f6-7890-abcd-ef1234567810",
+    "position": 10,
+    "filepath": "src/pages/slides/Slide10Connect.tsx",
+    "title": "Connect",
+    "description": "Closing slide — email, GitHub, LinkedIn, call to connect",
+    "speakerNotes": ""
+  }
+]
