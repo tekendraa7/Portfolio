@@ -3,24 +3,22 @@ import { AboutSection } from "@/components/portfolio/AboutSection";
 import { ProjectsSection } from "@/components/portfolio/ProjectsSection";
 import { ContactSection } from "@/components/portfolio/ContactSection";
 import { aboutData, projectsData, contactLinks, contactDetails } from "@/data/portfolioData";
+import { MatrixBackground } from "@/components/portfolio/MatrixBackground";
 
 export default function Portfolio() {
   return (
-    <div className="container mx-auto px-4 py-8 space-y-20">
-      <section id="about">
+    <div className="relative isolate">
+      <MatrixBackground className="absolute inset-0 -z-10 h-full w-full opacity-20" />
+      <div className="container mx-auto px-4 py-8 space-y-16">
         <SectionTitle>About Me</SectionTitle>
         <AboutSection data={aboutData} />
-      </section>
 
-      <section id="projects">
-        <SectionTitle>My Projects</SectionTitle>
-        <ProjectsSection projects={projectsData} />
-      </section>
-
-      <section id="contact">
         <SectionTitle>Get In Touch</SectionTitle>
         <ContactSection contactLinks={contactLinks} contactDetails={contactDetails} />
-      </section>
+
+        <SectionTitle>My Projects</SectionTitle>
+        <ProjectsSection projects={projectsData} />
+      </div>
     </div>
   );
 }

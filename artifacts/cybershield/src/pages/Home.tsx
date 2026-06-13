@@ -1,70 +1,126 @@
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
-import { ShieldCheck, ArrowRight, User, FolderKanban, MessageSquare, BookOpen, Map } from "lucide-react";
-import { MatrixBackground } from "@/components/portfolio/MatrixBackground";
-import { aboutData } from "@/data/portfolioData";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { ArrowRight, BotMessageSquare, Briefcase, Newspaper, Github, Linkedin, Download, BookOpen } from "lucide-react";
+import { aboutData, contactLinks } from "@/data/portfolioData";
 
 export default function Home() {
+  const socialIconsToShow = ['GitHub', 'LinkedIn'];
+  const filteredContactLinks = contactLinks.filter(link => socialIconsToShow.includes(link.name));
+
   return (
-    <div className="flex flex-col min-h-screen">
-      <section className="relative flex flex-col items-center justify-center min-h-screen text-center px-4 overflow-hidden">
-        <MatrixBackground className="absolute inset-0 w-full h-full opacity-30" />
-        <div className="relative z-10 max-w-3xl mx-auto">
-          <ShieldCheck className="h-20 w-20 text-primary mx-auto mb-6 drop-shadow-lg" />
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-foreground mb-4 text-glow">
-            {aboutData.name}
+    <div className="space-y-16 container mx-auto px-4 py-8">
+      <section className="relative text-center py-20 md:py-28 overflow-hidden rounded-xl bg-gradient-to-br from-primary/10 to-accent/10 border border-border">
+        <div className="absolute -top-1/2 -left-1/2 w-[200%] h-[200%] bg-[radial-gradient(circle_at_center,_rgba(77,163,255,0.08)_0%,_transparent_40%)] -z-10 animate-[spin_20s_linear_infinite]"></div>
+
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="relative w-32 h-32 mx-auto mb-6">
+            <img
+              src={aboutData.profileImageUrl || "https://placehold.co/128x128.png"}
+              alt={aboutData.name || "Profile Picture"}
+              className="w-full h-full rounded-full shadow-lg border-4 border-background/80 object-cover"
+            />
+          </div>
+          <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-foreground mb-4 text-glow">
+            Tekendra Bhandari
           </h1>
-          <p className="text-xl md:text-2xl text-accent mb-6 font-semibold">
-            {aboutData.title}
+          <p className="text-lg md:text-xl text-primary font-semibold max-w-3xl mx-auto mb-8">
+            Cyber Researcher &amp; Developer <br />
+            <span className="text-muted-foreground font-normal text-base">Cybersecurity | Linux | AI &amp; Stock Market Analysis</span>
           </p>
-          <p className="text-base md:text-lg text-muted-foreground mb-10 max-w-xl mx-auto">
-            {aboutData.bio}
-          </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button asChild size="lg" className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-primary-foreground shadow-glow-primary">
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
+            <Button asChild size="lg">
               <Link href="/portfolio">
-                View My Work <ArrowRight className="ml-2 h-5 w-5" />
+                Explore Portfolio <Briefcase className="ml-2 h-5 w-5" />
               </Link>
             </Button>
-            <Button asChild size="lg" variant="outline" className="w-full sm:w-auto border-accent text-accent hover:bg-accent/10">
-              <Link href="/qa">
-                Ask AI Assistant <MessageSquare className="ml-2 h-5 w-5" />
+            <Button asChild variant="outline" size="lg">
+              <Link href="/blogs">
+                View Research <BookOpen className="ml-2 h-5 w-5" />
               </Link>
             </Button>
           </div>
         </div>
       </section>
 
-      <section className="py-20 px-4 bg-background/50 backdrop-blur-sm">
-        <div className="container mx-auto max-w-4xl">
-          <h2 className="text-3xl font-bold text-center text-primary mb-12">Explore The Site</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              { href: "/portfolio", icon: FolderKanban, label: "Portfolio", desc: "Projects, skills & contact" },
-              { href: "/qa", icon: MessageSquare, label: "Q&A / Chat", desc: "AI chatbot for cybersecurity questions" },
-              { href: "/blogs", icon: BookOpen, label: "Research", desc: "Top blogs & resources" },
-              { href: "/roadmap", icon: Map, label: "Roadmap", desc: "Learning path & certifications" },
-            ].map((item) => (
-              <Link key={item.href} href={item.href}>
-                <div className="group flex flex-col items-center p-6 rounded-xl border bg-card hover:border-primary hover:shadow-glow-primary transition-all duration-300 cursor-pointer h-full">
-                  <item.icon className="h-10 w-10 text-primary mb-3 group-hover:scale-110 transition-transform" />
-                  <h3 className="font-semibold text-foreground mb-1">{item.label}</h3>
-                  <p className="text-xs text-muted-foreground text-center">{item.desc}</p>
-                </div>
-              </Link>
-            ))}
+      <section className="py-12">
+        <div className="text-center">
+          <h2 className="text-3xl font-bold text-foreground mb-4">About Me</h2>
+          <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
+            A passionate Computer Engineering student diving deep into the world of cybersecurity, Linux, and networking.
+            Dedicated to leveraging technology to build secure and innovative solutions for a safer digital tomorrow.
+          </p>
+          <div className="flex items-center justify-center gap-4">
+            <Button asChild variant="outline">
+              <a href="/tekendra_bhandari_cv.pdf" download>
+                Download CV <Download className="ml-2 h-4 w-4" />
+              </a>
+            </Button>
+            <div className="flex space-x-4">
+              {filteredContactLinks.map((link) => (
+                <a
+                  key={link.name}
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={link.name}
+                  className="text-muted-foreground hover:text-primary transition-all duration-200"
+                >
+                  <link.icon className="h-6 w-6" />
+                </a>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="py-20 px-4">
-        <div className="container mx-auto max-w-2xl text-center">
-          <User className="h-16 w-16 text-accent mx-auto mb-6" />
-          <h2 className="text-3xl font-bold text-primary mb-4">About Me</h2>
-          <p className="text-muted-foreground mb-6">{aboutData.bio}</p>
-          <Button asChild variant="outline">
-            <Link href="/portfolio#about">Learn More</Link>
-          </Button>
+      <section className="container mx-auto px-4">
+        <h2 className="text-3xl font-bold text-center text-foreground mb-12">What You'll Find Here</h2>
+        <div className="grid md:grid-cols-3 gap-8">
+          <Card className="shadow-sm hover:shadow-lg hover:border-primary/50 transition-all duration-300">
+            <CardHeader className="items-center">
+              <Briefcase className="h-12 w-12 text-primary mb-2" />
+              <CardTitle className="text-xl text-center">My Portfolio</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-muted-foreground text-center">
+                Discover my projects, skills, and journey in computer engineering.
+              </p>
+              <Link href="/portfolio" className="mt-4 text-primary hover:underline flex items-center justify-center">
+                View Portfolio <ArrowRight className="ml-1 h-4 w-4" />
+              </Link>
+            </CardContent>
+          </Card>
+
+          <Card className="shadow-sm hover:shadow-lg hover:border-primary/50 transition-all duration-300">
+            <CardHeader className="items-center">
+              <BotMessageSquare className="h-12 w-12 text-primary mb-2" />
+              <CardTitle className="text-xl text-center">AI Q&amp;A Chatbot</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-muted-foreground text-center">
+                Interact with an AI to get answers on Linux, Cybersecurity, and Networking.
+              </p>
+              <Link href="/qa" className="mt-4 text-primary hover:underline flex items-center justify-center">
+                Try the Chatbot <ArrowRight className="ml-1 h-4 w-4" />
+              </Link>
+            </CardContent>
+          </Card>
+
+          <Card className="shadow-sm hover:shadow-lg hover:border-primary/50 transition-all duration-300">
+            <CardHeader className="items-center">
+              <Newspaper className="h-12 w-12 text-primary mb-2" />
+              <CardTitle className="text-xl text-center">Blogs &amp; Research</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-muted-foreground text-center">
+                Curated cybersecurity blogs, market analysis, and research papers.
+              </p>
+              <Link href="/blogs" className="mt-4 text-primary hover:underline flex items-center justify-center">
+                Explore Posts <ArrowRight className="ml-1 h-4 w-4" />
+              </Link>
+            </CardContent>
+          </Card>
         </div>
       </section>
     </div>
