@@ -1,9 +1,0 @@
-{
-  "version": 2,
-  "builds": [
-    {
-      "src": ".migration-backup/package.json",
-      "use": "@vercel/next"
-    }
-  ]
-}
