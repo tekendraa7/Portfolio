@@ -1,10 +1,10 @@
 {
   "version": 2,
   "installCommand": "pnpm install",
-  "builds": [
-    {
-      "src": ".migration-backup/package.json",
-      "use": "@vercel/next"
-    }
-  ]
+  "buildCommand": "pnpm run build",
+  "outputDirectory": "artifacts/cybershield/dist",
+  "env": {
+    "PORT": "3000",
+    "BASE_PATH": "/"
+  }
 }
