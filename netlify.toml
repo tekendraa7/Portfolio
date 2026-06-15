@@ -1,9 +1,0 @@
-[build]
-  publish = "."
-  command = "echo 'Static site - no build step required'"
-
-[[redirects]]
-  from = "/"
-  to = "/html/index.html"
-  status = 302
-  force = true
