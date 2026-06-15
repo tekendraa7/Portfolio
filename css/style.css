@@ -188,12 +188,15 @@ a:hover { color: #fff; }
   color: var(--text);
   text-decoration: none;
 }
-.nav-logo-icon {
-  width: 36px; height: 36px;
-  background: linear-gradient(135deg, var(--primary), var(--secondary));
+.nav-logo-img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  background: #ffffff;
   border-radius: 8px;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 1.1rem;
+  padding: 3px;
+  box-shadow: 0 0 12px rgba(0, 212, 255, 0.25);
+  flex-shrink: 0;
 }
 .nav-links {
   display: flex;

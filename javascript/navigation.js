@@ -31,7 +31,7 @@
       <div class="container">
         <nav class="nav-inner">
           <a href="index.html" class="nav-logo">
-            <div class="nav-logo-icon">🛡</div>
+            <img src="/assets/images/logo.png" alt="Tekendra Bhandari logo" class="nav-logo-img" width="40" height="40" />
             <span>CyberShield</span>
           </a>
           <ul class="nav-links">
@@ -83,7 +83,7 @@
         <div class="footer-grid">
           <div class="footer-brand">
             <a href="index.html" class="nav-logo" style="text-decoration:none;">
-              <div class="nav-logo-icon">🛡</div>
+              <img src="/assets/images/logo.png" alt="Tekendra Bhandari logo" class="nav-logo-img" width="40" height="40" />
               <span>CyberShield</span>
             </a>
             <p>Cybersecurity portfolio of Tekendra Bhandari — aspiring security professional from Nepal.</p>
