@@ -1,0 +1,146 @@
+/* ============================================================
+   CYBERSHIELD PORTFOLIO — Responsive Styles
+   ============================================================ */
+
+/* ── Tablet: ≤ 1024px ── */
+@media (max-width: 1024px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+  .about-photo-wrap {
+    position: static;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+  .roadmap-phase {
+    grid-template-columns: 1fr 40px 1fr;
+  }
+}
+
+/* ── Tablet: ≤ 860px ── */
+@media (max-width: 860px) {
+  .roadmap-phase {
+    grid-template-columns: 40px 1fr;
+    grid-template-rows: auto;
+  }
+  .roadmap-phase-left {
+    display: none;
+  }
+  .roadmap-phase-right {
+    padding-bottom: 32px;
+  }
+  .roadmap-center {
+    padding-top: 6px;
+  }
+  .roadmap-phase:not(:last-child)::after {
+    left: 20px;
+    transform: none;
+  }
+  .roadmap-card { max-width: 100%; }
+}
+
+/* ── Mobile: ≤ 768px ── */
+@media (max-width: 768px) {
+  .section  { padding: 70px 0; }
+  .section-sm { padding: 40px 0; }
+
+  /* Nav */
+  .nav-links { display: none; }
+  .nav-hamburger { display: flex; }
+
+  /* Hero */
+  .hero-avatar { width: 110px; height: 110px; }
+  .hero-buttons { gap: 10px; }
+  .hero-buttons .btn { padding: 10px 20px; font-size: 0.85rem; }
+
+  /* Grids */
+  .projects-grid,
+  .blog-grid,
+  .certs-grid,
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Footer */
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  /* Contact */
+  .contact-form-card { padding: 24px; }
+
+  /* CV */
+  .cv-card { padding: 28px 20px; }
+
+  /* Newsletter */
+  .newsletter-wrap { padding: 28px 20px; }
+  .newsletter-form { flex-direction: column; }
+  .newsletter-form input { min-width: unset; width: 100%; }
+
+  /* Blog */
+  .blog-img { height: 150px; }
+
+  /* Portfolio */
+  .portfolio-filters { gap: 8px; }
+  .filter-btn { padding: 6px 14px; font-size: 0.8rem; }
+}
+
+/* ── Small Mobile: ≤ 480px ── */
+@media (max-width: 480px) {
+  .container { padding: 0 16px; }
+
+  h1 { font-size: 1.9rem; }
+  h2 { font-size: 1.5rem; }
+
+  .hero-name { font-size: 2rem; }
+  .hero-title { font-size: 0.85rem; }
+
+  .btn { padding: 10px 18px; font-size: 0.82rem; }
+  .btn-lg { padding: 12px 24px; font-size: 0.9rem; }
+
+  .section-heading { margin-bottom: 40px; }
+
+  .roadmap-dot { width: 32px; height: 32px; font-size: 0.85rem; }
+  .roadmap-card { padding: 16px; }
+
+  .about-text h2 { font-size: 1.6rem; }
+
+  .cert-card { padding: 20px; }
+
+  .project-body { padding: 18px; }
+
+  .skill-category { padding: 20px; }
+
+  .timeline-item {
+    grid-template-columns: 16px 1fr;
+    gap: 12px;
+  }
+  .timeline-dot { width: 16px; height: 16px; }
+}
+
+/* ── Print ── */
+@media print {
+  #navbar, footer, .hero-buttons, .hero-socials, .scroll-indicator { display: none; }
+  .page-offset { padding-top: 0; }
+  body { background: #fff; color: #000; }
+}
+
+/* ── Reduced motion ── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
